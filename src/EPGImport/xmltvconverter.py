@@ -107,7 +107,7 @@ class XMLTVConverter:
 				print("[XMLTVConverter] parsing event error:", e)
 
 	def get_category(self, str, duration):
-		if (not str) or (type(str) != type('str')):
+		if (not str) or (not isinstance(str, type('str'))):
 			return 0
 		if str in self.categories:
 			category = self.categories[str]
