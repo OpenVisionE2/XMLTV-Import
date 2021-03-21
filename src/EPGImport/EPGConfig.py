@@ -1,3 +1,4 @@
+from __future__ import print_function
 import os
 import log
 from xml.etree.cElementTree import iterparse
@@ -66,7 +67,7 @@ class EPGChannel:
 		return fd
 
 	def parse(self, filterCallback, downloadedFile):
-		print>>log, "[EPGImport] Parsing channels from '%s'" % self.name
+		print("[EPGImport] Parsing channels from '%s'" % self.name, file=log)
 		if self.items is None:
 			self.items = {}
 		try:
@@ -85,7 +86,7 @@ class EPGChannel:
 								self.items[id] = [ref]
 					elem.clear()
 		except Exception as e:
-			print>>log, "[EPGImport] failed to parse", downloadedFile, "Error:", e
+			print("[EPGImport] failed to parse", downloadedFile, "Error:", e, file=log)
 			pass
 
 	def update(self, filterCallback, downloadedFile=None):
@@ -93,7 +94,7 @@ class EPGChannel:
 		# Always read custom file since we don't know when it was last updated
 		# and we don't have multiple download from server problem since it is always a local file.
 		if os.path.exists(customFile):
-			print>>log, "[EPGImport] Parsing channels from '%s'" % customFile
+			print("[EPGImport] Parsing channels from '%s'" % customFile, file=log)
 			self.parse(filterCallback, customFile)
 		if downloadedFile is not None:
 			self.mtime = time.time()
@@ -174,16 +175,16 @@ def enumSources(path, filter=None, categories=False):
 					for s in enumSourcesFile(sourcefile, filter, categories):
 						yield s
 				except Exception, e:
-					print>>log, "[EPGImport] failed to open", sourcefile, "Error:", e
+					print("[EPGImport] failed to open", sourcefile, "Error:", e, file=log)
 	except Exception, e:
-		print>>log, "[EPGImport] failed to list", path, "Error:", e
+		print("[EPGImport] failed to list", path, "Error:", e, file=log)
 
 
 def loadUserSettings(filename=SETTINGS_FILE):
 	try:
 		return pickle.load(open(filename, 'rb'))
 	except Exception, e:
-		print>>log, "[EPGImport] No settings", e
+		print("[EPGImport] No settings", e, file=log)
 		return {"sources": []}
 
 
@@ -202,7 +203,7 @@ if __name__ == '__main__':
 	for p in enumSources(path):
 		t = (p.description, p.urls, p.parser, p.format, p.channels, p.nocheck)
 		l.append(t)
-		print t
+		print(t)
 		x.append(p.description)
 	storeUserSettings('settings.pkl', [1, "twee"])
 	assert loadUserSettings('settings.pkl') == {"sources": [1, "twee"]}
@@ -213,6 +214,6 @@ if __name__ == '__main__':
 		l.remove(t)
 	assert not l
 	for name, c in channelCache.items():
-		print "Update:", name
+		print("Update:", name)
 		c.update()
-		print "# of channels:", len(c.items)
+		print("# of channels:", len(c.items))

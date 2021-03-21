@@ -1,3 +1,4 @@
+from __future__ import print_function
 import epgdat
 import os
 import sys
@@ -48,7 +49,7 @@ class epgdatclass:
 			self.commitService()
 			self.epg.final_process()
 		except:
-			print "[EPGImport] Failure in epg_done"
+			print("[EPGImport] Failure in epg_done")
 			import traceback
 			traceback.print_exc()
 		self.epg = None

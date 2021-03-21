@@ -3,6 +3,7 @@
 # Heavily modified by MiLo http://www.sat4all.com/
 # Lots of stuff removed that i did not need.
 
+from __future__ import print_function
 import os
 import struct
 from datetime import datetime
@@ -10,9 +11,9 @@ from datetime import datetime
 try:
 	import dreamcrc
 	crc32_dreambox = lambda d, t: dreamcrc.crc32(d, t) & 0xffffffff
-	print "[EPGImport] using C module"
+	print("[EPGImport] using C module")
 except:
-	print "[EPGImport] failed to load C implementation!"
+	print("[EPGImport] failed to load C implementation!")
 
 	# this table is used by CRC32 routine below (used by Dreambox for
 	# computing REF DESC value).
