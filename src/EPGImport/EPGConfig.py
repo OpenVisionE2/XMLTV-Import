@@ -174,16 +174,16 @@ def enumSources(path, filter=None, categories=False):
 				try:
 					for s in enumSourcesFile(sourcefile, filter, categories):
 						yield s
-				except Exception, e:
+				except Exception as e:
 					print("[EPGImport] failed to open", sourcefile, "Error:", e, file=log)
-	except Exception, e:
+	except Exception as e:
 		print("[EPGImport] failed to list", path, "Error:", e, file=log)
 
 
 def loadUserSettings(filename=SETTINGS_FILE):
 	try:
 		return pickle.load(open(filename, 'rb'))
-	except Exception, e:
+	except Exception as e:
 		print("[EPGImport] No settings", e, file=log)
 		return {"sources": []}
 
