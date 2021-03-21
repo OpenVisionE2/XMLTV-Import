@@ -5,7 +5,7 @@ from Screens.ChoiceBox import ChoiceBox
 from Components.ActionMap import ActionMap
 from ServiceReference import ServiceReference
 from Screens.ChannelSelection import service_types_radio, service_types_tv, ChannelSelection, ChannelSelectionBase
-from enigma import eServiceReference, eServiceCenter, iServiceInformation
+from enigma import eServiceReference, eServiceCenter
 from Components.Sources.List import List
 from Components.Label import Label
 import EPGConfig

@@ -1,7 +1,10 @@
 import os
 import log
-from xml.etree.cElementTree import ElementTree, Element, SubElement, tostring, iterparse
-import cPickle as pickle
+from xml.etree.cElementTree import iterparse
+try:
+	import cPickle as pickle
+except:
+	import pickle
 import gzip
 import time
 import random

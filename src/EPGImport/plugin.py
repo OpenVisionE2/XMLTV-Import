@@ -6,7 +6,7 @@ import enigma
 import log
 
 # Config
-from Components.config import config, configfile, ConfigEnableDisable, ConfigSubsection, ConfigYesNo, ConfigClock, getConfigListEntry, ConfigText, ConfigSelection, ConfigNumber, ConfigSubDict, NoSave
+from Components.config import config, ConfigEnableDisable, ConfigSubsection, ConfigYesNo, ConfigClock, getConfigListEntry, ConfigText, ConfigSelection, ConfigNumber, ConfigSubDict, NoSave
 import Screens.Standby
 from Screens.MessageBox import MessageBox
 from Screens.Screen import Screen
@@ -22,12 +22,8 @@ from Tools import Notifications
 from Tools.FuzzyDate import FuzzyTime
 from Tools.Directories import fileExists
 import ExpandableSelectionList
-try:
-	from Tools.StbHardware import getFPWasTimerWakeup
-except:
-	from Tools.DreamboxHardware import getFPWasTimerWakeup
+from Tools.StbHardware import getFPWasTimerWakeup
 import NavigationInstance
-
 import filtersServices
 
 

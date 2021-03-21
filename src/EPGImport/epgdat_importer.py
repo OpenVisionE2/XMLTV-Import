@@ -2,7 +2,6 @@ import epgdat
 import os
 import sys
 
-import sys
 # Hack to make this test run on Windows (where the reactor cannot handle files)
 if sys.platform.startswith('win'):
 	tmppath = '.'

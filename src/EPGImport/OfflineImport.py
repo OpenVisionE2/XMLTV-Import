@@ -6,7 +6,6 @@
 # where they can be found. On Linux, you can also download from the internet,
 # on windows the xmltv files must be local files.
 #
-import os
 import sys
 import time
 import EPGConfig

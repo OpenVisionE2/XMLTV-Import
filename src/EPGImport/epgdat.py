@@ -4,17 +4,15 @@
 # Lots of stuff removed that i did not need.
 
 import os
-import sys
-import codecs
 import struct
 from datetime import datetime
 
 try:
 	import dreamcrc
 	crc32_dreambox = lambda d, t: dreamcrc.crc32(d, t) & 0xffffffff
-	print "[EPGImport] using C module, yay"
+	print "[EPGImport] using C module"
 except:
-	print "[EPGImport] failed to load C implementation, sorry"
+	print "[EPGImport] failed to load C implementation!"
 
 	# this table is used by CRC32 routine below (used by Dreambox for
 	# computing REF DESC value).

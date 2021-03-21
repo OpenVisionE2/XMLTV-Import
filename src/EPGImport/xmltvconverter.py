@@ -1,8 +1,7 @@
 import time
 import calendar
 import log
-#from pprint import pprint
-from xml.etree.cElementTree import ElementTree, Element, SubElement, tostring, iterparse
+from xml.etree.cElementTree import iterparse
 
 # %Y%m%d%H%M%S
 
