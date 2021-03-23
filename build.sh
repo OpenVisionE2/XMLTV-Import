@@ -15,6 +15,7 @@ commit_files() {
   rm -rf *.mo
   git checkout master
   ./PEP8.sh
+  ./xml.sh
 }
 
 upload_files() {
