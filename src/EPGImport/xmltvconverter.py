@@ -43,7 +43,6 @@ def get_xml_string(elem, name):
 				r = txt
 	except Exception as e:
 		print("[XMLTVConverter] get_xml_string error:", e)
-
 	# Now returning UTF-8 by default, the epgdat/oudeis must be adjusted to make this work.
 	# Note that the default xml.sax.saxutils.unescape() function don't unescape
 	# some characters and we have to manually add them to the entities dictionary.
@@ -52,6 +51,7 @@ def get_xml_string(elem, name):
                                   r"&#91;": r"[", r"&#93;": r"]", })
 
 	return r.encode('utf-8')
+
 
 
 def enumerateProgrammes(fp):

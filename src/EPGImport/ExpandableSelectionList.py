@@ -9,6 +9,7 @@ expandableIcon = LoadPixmap(resolveFilename(SCOPE_GUISKIN, "icons/expandable.png
 expandedIcon = LoadPixmap(resolveFilename(SCOPE_GUISKIN, "icons/expanded.png"))
 
 
+
 def loadSettings():
 	global cat_desc_loc, entry_desc_loc, cat_icon_loc, entry_icon_loc
 	x, y, w, h = skin.parameters.get("SelectionListDescr", (25, 3, 650, 30))
