@@ -192,9 +192,9 @@ class epgdat_class:
 		for i in range(num_tot_desc):
 			ssub = s[i * 245:i * 245 + 245]
 			if EpgDatV8:
-				sres = self.s_B3sHBB.pack((i << 4) + (num_tot_desc-1), 'eng', 0x0000, len(ssub) + 1, 0x15) + str(ssub)
+				sres = self.s_B3sHBB.pack((i << 4) + (num_tot_desc - 1), 'eng', 0x0000, len(ssub) + 1, 0x15) + str(ssub)
 			else:
-				sres = self.s_B3sBBB.pack((i << 4) + (num_tot_desc-1), 'eng', 0x00, len(ssub) + 1, 0x15) + str(ssub)
+				sres = self.s_B3sBBB.pack((i << 4) + (num_tot_desc - 1), 'eng', 0x00, len(ssub) + 1, 0x15) + str(ssub)
 			r.append((crc32_dreambox(sres, 0x4e), sres))
 		return r
 
