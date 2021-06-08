@@ -8,7 +8,6 @@ import os
 import struct
 from datetime import datetime
 
-from boxbranding import getImageDistro
 EpgDatV8 = True
 
 try:
