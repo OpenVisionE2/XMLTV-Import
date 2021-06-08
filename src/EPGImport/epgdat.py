@@ -9,7 +9,7 @@ import struct
 from datetime import datetime
 
 from boxbranding import getImageDistro
-EpgDatV8 = getImageDistro() in ("openvix",)
+EpgDatV8 = True
 
 try:
 	import dreamcrc
