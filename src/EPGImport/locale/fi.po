@@ -1,22 +1,17 @@
-# Finnish translations for plugins package.
-# Copyright (C) 2015 THE plugins'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the plugins package.
-# Automatically generated, 2015.
-#
 msgid ""
 msgstr ""
 "Project-Id-Version: plugins 0.0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-03-21 15:57+0330\n"
-"PO-Revision-Date: 2017-07-04 15:47+0200\n"
-"Last-Translator: Samzam <http://www.world-of-satellite.com>\n"
+"POT-Creation-Date: 2021-06-15 20:04+0430\n"
+"PO-Revision-Date: 2021-06-03 01:18+0300\n"
+"Last-Translator: tomppaa <http://www.huoltovalikko.com/>\n"
 "Language-Team: none\n"
 "Language: fi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 2.0.2\n"
+"X-Generator: Poedit 2.4.3\n"
 
 #: ../plugin.py:725
 msgid ""
@@ -36,15 +31,15 @@ msgstr " tapahtumia\n"
 
 #: ../filtersServices.py:149
 msgid "Add Channel"
-msgstr ""
+msgstr "Lisää Kanava"
 
 #: ../filtersServices.py:148
 msgid "Add Provider"
-msgstr ""
+msgstr "Lisää Palveluntarjoaja"
 
 #: ../filtersServices.py:260
 msgid "All services provider"
-msgstr ""
+msgstr "Kaikki palveluntarjoajat"
 
 #: ../plugin.py:1086
 msgid "Automated EPG Importer"
@@ -84,11 +79,11 @@ msgstr "Valitse päivät"
 
 #: ../filtersServices.py:227
 msgid "Delete all"
-msgstr ""
+msgstr "Poista kaikki"
 
 #: ../filtersServices.py:226
 msgid "Delete selected"
-msgstr ""
+msgstr "Poista valittu"
 
 #: ../plugin.py:293
 msgid "EPG Import Configuration"
@@ -113,7 +108,6 @@ msgid "EPG Importer"
 msgstr "EPG:n lataus"
 
 #: ../plugin.py:1088 ../plugin.py:1104
-#, fuzzy
 msgid "EPGImport"
 msgstr "EPG:n lataus"
 
@@ -151,7 +145,7 @@ msgstr "Perjantai"
 
 #: ../plugin.py:504 ../filtersServices.py:164
 msgid "Ignore services list"
-msgstr ""
+msgstr "Ohita palvelu lista"
 
 #: ../plugin.py:564
 msgid "Import current source"
@@ -182,7 +176,7 @@ msgstr "Ladattu: %s %s, %d tapahtumaa"
 
 #: ../plugin.py:362
 msgid "Load EPG only for IPTV channels"
-msgstr ""
+msgstr "Lataa EPG vain iptv kanaville"
 
 #: ../plugin.py:361
 msgid "Load EPG only services in bouquets"
@@ -190,7 +184,7 @@ msgstr "Lataa EPG vain suosikkilistojen kanaville"
 
 #: ../plugin.py:367
 msgid "Load long descriptions up to X days"
-msgstr "Lataa ohjelmakuvaukset X päivälle"
+msgstr "Lataa ohjelmakuvaukset päivälle"
 
 #: ../plugin.py:299
 msgid "Manual"
@@ -210,7 +204,7 @@ msgstr "Paina OK"
 
 #: ../filtersServices.py:193
 msgid "Really delete all list?"
-msgstr ""
+msgstr "Haluatko varmasti poistaa kaikki listat?"
 
 #: ../plugin.py:357
 msgid "Return to deep standby after import"
@@ -218,7 +212,7 @@ msgstr "Palaa virransäästötilaan latauksen jälkeen"
 
 #: ../plugin.py:368
 msgid "Run AutoTimer after import"
-msgstr "Käynnistä automaattiajastusten haku latauksen jälkeen"
+msgstr "Käynnistä automaattiajastukset haku EPG:en latauksen jälkeen"
 
 #: ../plugin.py:86
 msgid "Saturday"
@@ -230,7 +224,7 @@ msgstr "Tallenna"
 
 #: ../plugin.py:505 ../filtersServices.py:279
 msgid "Select action"
-msgstr ""
+msgstr "Valitse toiminto"
 
 #: ../filtersServices.py:252
 msgid "Select service to add..."
@@ -239,7 +233,7 @@ msgstr ""
 #: ../plugin.py:366
 #, fuzzy
 msgid "Show \"EPG Importer\" in main menu"
-msgstr "Näytä \"EPG:n lataus\" laajennusvalikossa"
+msgstr "Näytä \"EPG:n lataus\" päävalikossa"
 
 #: ../plugin.py:365
 msgid "Show \"EPGImport\" in extensions"
@@ -247,7 +241,7 @@ msgstr "Näytä \"EPG:n lataus\" laajennusvalikossa"
 
 #: ../plugin.py:504
 msgid "Show log"
-msgstr ""
+msgstr "Näytä loki"
 
 #: ../plugin.py:364
 msgid "Skip import on restart GUI"
