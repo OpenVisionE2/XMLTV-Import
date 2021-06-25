@@ -48,7 +48,7 @@ def get_xml_string(elem, name):
         # some characters and we have to manually add them to the entities dictionary.
         r = unescape(r, entities={r"&apos;": r"'", r"&quot;": r'"',
                                   r"&#124;": r"|", r"&nbsp;": r" ",
-                                  r"&#91;" : r"[", r"&#93;" : r"]", })
+                                  r"&#91;": r"[", r"&#93;": r"]", })
 
         return r.encode('utf-8')
 
