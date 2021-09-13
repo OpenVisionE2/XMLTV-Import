@@ -1,19 +1,17 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: \n"
+"Project-Id-Version: plugins 0.0.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-09-20 09:45+0430\n"
-"PO-Revision-Date: \n"
-"Last-Translator: Rob van der Does <RobvanderDoes@Gmail.com>\n"
-"Language-Team: \n"
-"Language: nl\n"
+"PO-Revision-Date: 2018-01-27 14:51+0800\n"
+"Last-Translator: 孤独之剑 <haotzyy1970@163.com>\n"
+"Language-Team: none\n"
+"Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.2.4\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Poedit-Basepath: ../../..\n"
-"X-Poedit-SearchPath-0: .\n"
+"X-Generator: Poedit 1.8.7\n"
 
 #: ../plugin.py:741
 msgid ""
@@ -23,104 +21,102 @@ msgid ""
 "Is this ok?"
 msgstr ""
 "\n"
-"Import van epg-data begint.\n"
-"Dit kan een paar minuten duren\n"
-"Is dit ok?"
+"导入EPG数据将开始.\n"
+"这可能需要几分钟.\n"
+"现在开始吗?"
 
 #: ../plugin.py:741
 msgid " events\n"
-msgstr " programma's\n"
+msgstr "字节\n"
 
 #: ../filtersServices.py:149
 msgid "Add Channel"
-msgstr "Zender toevoegen"
+msgstr "添加频道"
 
 #: ../filtersServices.py:148
 msgid "Add Provider"
-msgstr "Provider toevoegen"
+msgstr "添加供应商 "
 
 #: ../filtersServices.py:260
 msgid "All services provider"
-msgstr "Alle zender providers"
+msgstr "所有的服务供应商"
 
 #: ../plugin.py:1102
 msgid "Automated EPG Importer"
-msgstr "Automatische EPG Importeur"
+msgstr "自动EPG导入 "
 
 #: ../plugin.py:365
 msgid "Automatic import EPG"
-msgstr "Automatische EPG import"
+msgstr "EPG自动导入 "
 
 #: ../plugin.py:366
 msgid "Automatic start time"
-msgstr "Automatische start tijd"
+msgstr "自动开始时间 "
 
 #: ../plugin.py:308 ../plugin.py:557 ../plugin.py:637
 msgid "Cancel"
-msgstr "Annuleer"
+msgstr "取消 "
 
 #: ../plugin.py:370
 msgid "Choice days for start import"
-msgstr "Kies dagen voor importeren"
+msgstr "选择日期启动导入 "
 
 #: ../plugin.py:693
 msgid "Clear"
-msgstr "Verwijder"
+msgstr "清除 "
 
 #: ../plugin.py:381
 msgid "Clearing current EPG before import"
-msgstr "Verwijder EPG voor de import"
+msgstr "导入前清除当前EPG "
 
 #: ../plugin.py:375
 msgid "Consider setting \"Days Profile\""
-msgstr "Overweeg dagen in te stellen"
+msgstr "通过设置 \"每天扼要介绍 \" "
 
 #: ../plugin.py:650
 msgid "Days Profile"
-msgstr "Dagenprofiel"
+msgstr "在特定日期导入"
 
 #: ../filtersServices.py:227
 msgid "Delete all"
-msgstr "Alles verwijderen"
+msgstr "删除所有 "
 
 #: ../filtersServices.py:226
 msgid "Delete selected"
-msgstr "Geselecteerde verwijderen"
+msgstr "删除所选 "
 
 #: ../plugin.py:304
 msgid "EPG Import Configuration"
-msgstr "EPG import configuratie"
+msgstr "EPG导入配置 "
 
 #: ../plugin.py:718
 msgid "EPG Import Log"
-msgstr "EPG Import log"
+msgstr "EPG导入日志"
 
 #: ../plugin.py:592
 msgid "EPG Import Sources"
-msgstr "EPG Import bronnen"
+msgstr "EPG的导入来源"
 
 #: ../plugin.py:793
 #, python-format
 msgid "EPG Import finished, %d events"
-msgstr "EPG Import gereed, %d programma's"
+msgstr "EPG导入完成, %d 字节 "
 
 #: ../plugin.py:763
-#, fuzzy
 msgid "EPG Importer"
-msgstr "EPG importeur"
+msgstr "EPG节目预告"
 
 #: ../plugin.py:1104 ../plugin.py:1120
-#, fuzzy
 msgid "EPGImport"
-msgstr "EPG importeur"
+msgstr "电子节目指南"
 
 #: ../plugin.py:481
 msgid ""
 "EPGImport\n"
 "Import of epg data is still in progress. Please wait."
 msgstr ""
-"EPGImport\n"
-"Import van epg-data is nog bezig. Even wachten."
+"EPG导入 \n"
+"EPG数据的导入仍在进行中,请稍等."
 
 #: ../plugin.py:496
 msgid ""
@@ -129,30 +125,30 @@ msgid ""
 "This may take a few minutes.\n"
 "Is this ok?"
 msgstr ""
-"EPGImport\n"
-"Import van epg-data begint.\n"
-"Dit kan een paar minuten duren.\n"
-"Is dit ok?"
+"EPG导入\n"
+"EPG数据将开始导入.\n"
+"这可能需要几分钟时间.\n"
+"现在开始吗?"
 
 #: ../plugin.py:505
 msgid ""
 "EPGImport Plugin\n"
 "Failed to start:\n"
 msgstr ""
-"EPGImporteur Plugin\n"
-"Starten mislukt:\n"
+"EPG导入插件\n"
+"启动失败:\n"
 
 #: ../plugin.py:90
 msgid "Friday"
-msgstr "Vrijdag"
+msgstr "星期五 "
 
 #: ../plugin.py:520 ../filtersServices.py:164
 msgid "Ignore services list"
-msgstr "Negeer zenderlijst"
+msgstr "忽略频道列表 "
 
 #: ../plugin.py:580
 msgid "Import current source"
-msgstr "Importeer huidige bron"
+msgstr "输入导入源"
 
 #: ../plugin.py:329
 #, python-format
@@ -160,22 +156,22 @@ msgid ""
 "Importing: %s\n"
 "%s events"
 msgstr ""
-"Importeert: %s\n"
-"%s programma's"
+"导入: %s\n"
+"%s 字节 "
 
 #: ../plugin.py:741
 msgid "Last import: "
-msgstr "Laatste import: "
+msgstr "最后导入: "
 
 #: ../plugin.py:476
 #, python-format
 msgid "Last import: %s events"
-msgstr "Laatste import: %s programma's"
+msgstr "最后导入: %s 字节"
 
 #: ../plugin.py:471
 #, python-format
 msgid "Last: %s %s, %d events"
-msgstr "Laatste: %s %s, %d programma's"
+msgstr "最后更新: %s %s, %d 字节 "
 
 #: ../plugin.py:373
 msgid "Load EPG"
@@ -183,55 +179,55 @@ msgstr ""
 
 #: ../plugin.py:374
 msgid "Load EPG only for IPTV channels"
-msgstr "Laad EPG alleen voor IPTV zenders"
+msgstr "仅为IPTV频道加载EPG"
 
 #: ../plugin.py:372
 msgid "Load EPG only services in bouquets"
-msgstr "Laad alleen EPG van kanalen in boeketten"
+msgstr "仅在自定义频道中加载EPG"
 
 #: ../plugin.py:379
 msgid "Load long descriptions up to X days"
-msgstr "Laad lange beschrijvingen voor x dagen"
+msgstr "载入EPG数据最大天数"
 
 #: ../plugin.py:310
 msgid "Manual"
-msgstr "Handmatig"
+msgstr "手动 "
 
 #: ../plugin.py:86
 msgid "Monday"
-msgstr "Maandag"
+msgstr "星期一"
 
 #: ../plugin.py:491
 msgid "No active EPG sources found, nothing to do"
-msgstr "Geen actieve bronnen gevonden; niets te doen"
+msgstr "没有发现有效的EPG源"
 
 #: ../plugin.py:78
 msgid "Press OK"
-msgstr "Druk op OK"
+msgstr "按OK键"
 
 #: ../filtersServices.py:193
 msgid "Really delete all list?"
-msgstr "Alle lijsten wissen?"
+msgstr "真的删除所有列表？"
 
 #: ../plugin.py:368
 msgid "Return to deep standby after import"
-msgstr "Ga naar deep sleep na de import"
+msgstr "导入后返回深度待机"
 
 #: ../plugin.py:380
 msgid "Run AutoTimer after import"
-msgstr "Activeer AutoTimer na de import"
+msgstr "导入后运行自动计时器 "
 
 #: ../plugin.py:91
 msgid "Saturday"
-msgstr "Zaterdag"
+msgstr "星期六"
 
 #: ../plugin.py:309 ../plugin.py:558 ../plugin.py:638 ../plugin.py:696
 msgid "Save"
-msgstr "Opslaan"
+msgstr "保存"
 
 #: ../plugin.py:521 ../filtersServices.py:279
 msgid "Select action"
-msgstr "Kies actie"
+msgstr "选择操作 "
 
 #: ../plugin.py:373
 msgid "Select load EPG mode for services."
@@ -239,85 +235,85 @@ msgstr ""
 
 #: ../filtersServices.py:252
 msgid "Select service to add..."
-msgstr "Kies het kanaal dat toegevoegd moet worden..."
+msgstr ""
 
 #: ../plugin.py:378
-#, fuzzy
 msgid "Show \"EPG Importer\" in main menu"
-msgstr "Toon \"EPG importeur\" in plugins"
+msgstr "在主菜单中显示'EPG导入程序' "
 
 #: ../plugin.py:377
 msgid "Show \"EPGImport\" in extensions"
-msgstr "Toon \"EPG importeur\" in extensions"
+msgstr "在扩展栏中显示'EPG导入' "
 
 #: ../plugin.py:518
 msgid "Show log"
-msgstr "Toon log"
+msgstr "显示日志 "
 
 #: ../plugin.py:376
 msgid "Skip import on restart GUI"
-msgstr "Sla import over na herstarten GUI"
+msgstr "重启GUI跳过导入 "
 
 #: ../plugin.py:311
 msgid "Sources"
-msgstr "Bronnen"
+msgstr "来源 "
 
 #: ../plugin.py:369
 msgid "Standby at startup"
-msgstr "Stand-by na opstarten"
+msgstr "待机时 "
 
 #: ../plugin.py:371
 msgid "Start import after booting up"
-msgstr "Start import na booten"
+msgstr "开机启动导入"
 
 #: ../plugin.py:92
 msgid "Sunday"
-msgstr "Zondag"
+msgstr "星期日 "
 
 #: ../plugin.py:89
 msgid "Thursday"
-msgstr "Donderdag"
+msgstr "星期四"
 
 #: ../plugin.py:87
 msgid "Tuesday"
-msgstr "Dinsdag"
+msgstr "星期二 "
 
 #: ../plugin.py:88
 msgid "Wednesday"
-msgstr "Woensdag"
+msgstr "星期三 "
 
 #: ../plugin.py:367
 msgid "When in deep standby"
-msgstr "Indien in deep sleep"
+msgstr "当处于深度待机状态时"
 
 #: ../plugin.py:724
+#, fuzzy
 msgid "Write to /tmp/epgimport.log"
-msgstr "Schrijf naar /tmp/EPGimport.log"
+msgstr "写入 /tmp/EPGimport.log"
 
 #: ../plugin.py:660
 msgid ""
 "You may not use this settings!\n"
 "At least one day a week should be included!"
 msgstr ""
-"U kunt deze instellingen niet gebruiken!\n"
-"Er moet tenminste één dag per week worden ingesteld!"
+"你可以不使用这些设置!\n"
+"每周必须至少选择一天!"
 
 #: ../plugin.py:793
 msgid ""
 "You must restart Enigma2 to load the EPG data,\n"
 "is this OK?"
 msgstr ""
-"U moet nu Enigma2 herstarten om de EPG-data te laden,\n"
-"Is dit OK?"
+"你必须重新启动Enigma2加载EPG数据.\n"
+"现在开始吗?"
 
 #: ../plugin.py:67
 #, fuzzy
 msgid "all channels"
-msgstr "Zender toevoegen"
+msgstr "添加频道"
 
 #: ../plugin.py:51
 msgid "always"
-msgstr "altijd"
+msgstr "总是 "
 
 #: ../plugin.py:65
 msgid "checking service reference(default)"
@@ -325,29 +321,29 @@ msgstr ""
 
 #: ../plugin.py:54
 msgid "never"
-msgstr "nooit"
+msgstr "从未 "
 
 #: ../plugin.py:66
 #, fuzzy
 msgid "only IPTV channels"
-msgstr "Laad EPG alleen voor IPTV zenders"
+msgstr "仅为IPTV频道加载EPG"
 
 #: ../plugin.py:53
 msgid "only automatic boot"
-msgstr "alleen na automatische boot"
+msgstr "开机自动导入 "
 
 #: ../plugin.py:52
 msgid "only manual boot"
-msgstr "alleen na handmatige boot"
+msgstr "仅手动启动"
 
 #: ../filtersServices.py:151
 msgid "press OK to save list"
-msgstr "druk op OK om de lijst op te slaan"
+msgstr "按OK键保存列表 "
 
 #: ../plugin.py:62
 msgid "skip the import"
-msgstr "sla import over"
+msgstr "跳过导入"
 
 #: ../plugin.py:61
 msgid "wake up and import"
-msgstr "wordt wakker en importeer"
+msgstr "唤醒并导入"
