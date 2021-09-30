@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: EPGImport\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-03-21 15:57+0330\n"
+"POT-Creation-Date: 2021-09-20 09:45+0430\n"
 "PO-Revision-Date: 2017-07-12 11:14+0300\n"
 "Last-Translator: Vytenis P. <vyteniui@gmail.com>\n"
 "Language-Team: Vytenis P. <vyteniui@gmail.com>\n"
@@ -14,7 +14,7 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 
-#: ../plugin.py:725
+#: ../plugin.py:741
 msgid ""
 "\n"
 "Import of epg data will start.\n"
@@ -26,7 +26,7 @@ msgstr ""
 "Tai gali užtrukti keletą minučių.\n"
 "Pradėti?"
 
-#: ../plugin.py:725
+#: ../plugin.py:741
 msgid " events\n"
 msgstr " įvykiai\n"
 
@@ -42,39 +42,39 @@ msgstr "Įtraukti teikėją"
 msgid "All services provider"
 msgstr "Visų kanalų tiekėjas"
 
-#: ../plugin.py:1086
+#: ../plugin.py:1102
 msgid "Automated EPG Importer"
 msgstr "Automatizuotas EPG importas"
 
-#: ../plugin.py:354
+#: ../plugin.py:365
 msgid "Automatic import EPG"
 msgstr "Automatinis EPG importas"
 
-#: ../plugin.py:355
+#: ../plugin.py:366
 msgid "Automatic start time"
 msgstr "Automatinio paleidimo laikas"
 
-#: ../plugin.py:297 ../plugin.py:541 ../plugin.py:621
+#: ../plugin.py:308 ../plugin.py:557 ../plugin.py:637
 msgid "Cancel"
 msgstr "Atšaukti"
 
-#: ../plugin.py:359
+#: ../plugin.py:370
 msgid "Choice days for start import"
 msgstr "Pasirinkite dienas importui"
 
-#: ../plugin.py:677
+#: ../plugin.py:693
 msgid "Clear"
 msgstr "Išvalyti"
 
-#: ../plugin.py:369
+#: ../plugin.py:381
 msgid "Clearing current EPG before import"
 msgstr "Prieš importą išvalyti esantį EPG"
 
-#: ../plugin.py:363
+#: ../plugin.py:375
 msgid "Consider setting \"Days Profile\""
 msgstr "Atsižvelgti į 'Dienų profilio' nuostatas"
 
-#: ../plugin.py:634
+#: ../plugin.py:650
 msgid "Days Profile"
 msgstr "Dienų profilis"
 
@@ -86,34 +86,34 @@ msgstr "šalinti viską"
 msgid "Delete selected"
 msgstr "šalinti pasirinktus"
 
-#: ../plugin.py:293
+#: ../plugin.py:304
 msgid "EPG Import Configuration"
 msgstr "EPG importas - konfigūravimas"
 
-#: ../plugin.py:702
+#: ../plugin.py:718
 msgid "EPG Import Log"
 msgstr "EPG importas - žurnalas"
 
-#: ../plugin.py:576
+#: ../plugin.py:592
 msgid "EPG Import Sources"
 msgstr "EPG importas - šaltiniai"
 
-#: ../plugin.py:777
+#: ../plugin.py:793
 #, python-format
 msgid "EPG Import finished, %d events"
 msgstr "EPG importas baigtas, %d įvykių"
 
-#: ../plugin.py:747
+#: ../plugin.py:763
 #, fuzzy
 msgid "EPG Importer"
 msgstr "EPG importo nuostatos"
 
-#: ../plugin.py:1088 ../plugin.py:1104
+#: ../plugin.py:1104 ../plugin.py:1120
 #, fuzzy
 msgid "EPGImport"
 msgstr "EPG importo nuostatos"
 
-#: ../plugin.py:467
+#: ../plugin.py:481
 msgid ""
 "EPGImport\n"
 "Import of epg data is still in progress. Please wait."
@@ -121,7 +121,7 @@ msgstr ""
 "EPG importas\n"
 "EPG duomenų importas dar vyksta, palaukite..."
 
-#: ../plugin.py:482
+#: ../plugin.py:496
 msgid ""
 "EPGImport\n"
 "Import of epg data will start.\n"
@@ -133,7 +133,7 @@ msgstr ""
 "Tai gali užtrukti keletą minučių.\n"
 "Pradėti?"
 
-#: ../plugin.py:491
+#: ../plugin.py:505
 msgid ""
 "EPGImport Plugin\n"
 "Failed to start:\n"
@@ -141,19 +141,19 @@ msgstr ""
 "EPG importo įskiepis\n"
 "Nepavyko paleisti:\n"
 
-#: ../plugin.py:85
+#: ../plugin.py:90
 msgid "Friday"
 msgstr "penktadienis"
 
-#: ../plugin.py:504 ../filtersServices.py:164
+#: ../plugin.py:520 ../filtersServices.py:164
 msgid "Ignore services list"
 msgstr "Ignoruoti kanalų sąrašą"
 
-#: ../plugin.py:564
+#: ../plugin.py:580
 msgid "Import current source"
 msgstr "Importuoti šį šaltinį"
 
-#: ../plugin.py:318
+#: ../plugin.py:329
 #, python-format
 msgid ""
 "Importing: %s\n"
@@ -162,45 +162,49 @@ msgstr ""
 "Importuojama: %s\n"
 "%s įvykių"
 
-#: ../plugin.py:725
+#: ../plugin.py:741
 msgid "Last import: "
 msgstr "Paskutinis importas: "
 
-#: ../plugin.py:462
+#: ../plugin.py:476
 #, python-format
 msgid "Last import: %s events"
 msgstr "Paskutinis importas:  %s įvykių"
 
-#: ../plugin.py:457
+#: ../plugin.py:471
 #, python-format
 msgid "Last: %s %s, %d events"
 msgstr "Paskutiniai: %s %s, %d įvykiai"
 
-#: ../plugin.py:362
+#: ../plugin.py:373
+msgid "Load EPG"
+msgstr ""
+
+#: ../plugin.py:374
 msgid "Load EPG only for IPTV channels"
 msgstr ""
 
-#: ../plugin.py:361
+#: ../plugin.py:372
 msgid "Load EPG only services in bouquets"
 msgstr "Įkelti tik kanalų iš bukietų EPG"
 
-#: ../plugin.py:367
+#: ../plugin.py:379
 msgid "Load long descriptions up to X days"
 msgstr "Ilgus aprašymus įkelti iki X dienų trukmei"
 
-#: ../plugin.py:299
+#: ../plugin.py:310
 msgid "Manual"
 msgstr "Rankinis"
 
-#: ../plugin.py:81
+#: ../plugin.py:86
 msgid "Monday"
 msgstr "pirmadienis"
 
-#: ../plugin.py:477
+#: ../plugin.py:491
 msgid "No active EPG sources found, nothing to do"
 msgstr "Aktyvių EPG šaltinių nerasta, nėra ką daryti"
 
-#: ../plugin.py:73
+#: ../plugin.py:78
 msgid "Press OK"
 msgstr "Spauskite 'OK'"
 
@@ -208,84 +212,88 @@ msgstr "Spauskite 'OK'"
 msgid "Really delete all list?"
 msgstr "Ar tikrai ištrinti visą sąrašą?"
 
-#: ../plugin.py:357
+#: ../plugin.py:368
 msgid "Return to deep standby after import"
 msgstr "Po importo išjungti"
 
-#: ../plugin.py:368
+#: ../plugin.py:380
 msgid "Run AutoTimer after import"
 msgstr "Po importo paleisti autolaikmatį"
 
-#: ../plugin.py:86
+#: ../plugin.py:91
 msgid "Saturday"
 msgstr "šeštadienis"
 
-#: ../plugin.py:298 ../plugin.py:542 ../plugin.py:622 ../plugin.py:680
+#: ../plugin.py:309 ../plugin.py:558 ../plugin.py:638 ../plugin.py:696
 msgid "Save"
 msgstr "Išsaugoti"
 
-#: ../plugin.py:505 ../filtersServices.py:279
+#: ../plugin.py:521 ../filtersServices.py:279
 msgid "Select action"
 msgstr "Pasirinkite veiksmą"
+
+#: ../plugin.py:373
+msgid "Select load EPG mode for services."
+msgstr ""
 
 #: ../filtersServices.py:252
 msgid "Select service to add..."
 msgstr ""
 
-#: ../plugin.py:366
+#: ../plugin.py:378
 #, fuzzy
 msgid "Show \"EPG Importer\" in main menu"
 msgstr "'EPG importą' rodyti tarp plėtinių"
 
-#: ../plugin.py:365
+#: ../plugin.py:377
 msgid "Show \"EPGImport\" in extensions"
 msgstr "'EPG importą' rodyti tarp plėtinių"
 
-#: ../plugin.py:504
+#: ../plugin.py:518
 msgid "Show log"
 msgstr "Rodyti žurnalą"
 
-#: ../plugin.py:364
+#: ../plugin.py:376
 msgid "Skip import on restart GUI"
 msgstr "Paleidžiant iš naujo, neimportuoti"
 
-#: ../plugin.py:300
+#: ../plugin.py:311
 msgid "Sources"
 msgstr "Šaltiniai"
 
-#: ../plugin.py:358
+#: ../plugin.py:369
 msgid "Standby at startup"
 msgstr "Po paleidimo perjungti į budėjimo režimą"
 
-#: ../plugin.py:360
+#: ../plugin.py:371
 msgid "Start import after booting up"
 msgstr "Po paleidimo pradėti importą"
 
-#: ../plugin.py:87
+#: ../plugin.py:92
 msgid "Sunday"
 msgstr "sekmadienis"
 
-#: ../plugin.py:84
+#: ../plugin.py:89
 msgid "Thursday"
 msgstr "ketvirtadienis"
 
-#: ../plugin.py:82
+#: ../plugin.py:87
 msgid "Tuesday"
 msgstr "antradienis"
 
-#: ../plugin.py:83
+#: ../plugin.py:88
 msgid "Wednesday"
 msgstr "trečiadienis"
 
-#: ../plugin.py:356
+#: ../plugin.py:367
 msgid "When in deep standby"
 msgstr "Jeigu išjungtas"
 
-#: ../plugin.py:708
+#: ../plugin.py:724
 msgid "Write to /tmp/epgimport.log"
 msgstr "Rašyti į /tmp/epgimport.log"
 
-#: ../plugin.py:644
+#: ../plugin.py:660
 msgid ""
 "You may not use this settings!\n"
 "At least one day a week should be included!"
@@ -293,7 +301,7 @@ msgstr ""
 "Jūs negalite naudoti šių nustatymų!\n"
 "Turi būti įtraukta bent viena savaitės diena!"
 
-#: ../plugin.py:777
+#: ../plugin.py:793
 msgid ""
 "You must restart Enigma2 to load the EPG data,\n"
 "is this OK?"
@@ -301,13 +309,26 @@ msgstr ""
 "Kad įkelti EPG duomenis, aparatą reikia paleisti iš naujo.\n"
 "Paleisti  iš naujo dabar?"
 
+#: ../plugin.py:67
+#, fuzzy
+msgid "all channels"
+msgstr "Įtraukti kanalą"
+
 #: ../plugin.py:51
 msgid "always"
 msgstr "visada"
 
+#: ../plugin.py:65
+msgid "checking service reference(default)"
+msgstr ""
+
 #: ../plugin.py:54
 msgid "never"
 msgstr "niekada"
+
+#: ../plugin.py:66
+msgid "only IPTV channels"
+msgstr ""
 
 #: ../plugin.py:53
 msgid "only automatic boot"
