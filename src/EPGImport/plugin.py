@@ -397,9 +397,9 @@ class EPGImportConfig(ConfigListScreen, Screen):
 				list.append(self.cfg_runboot_restart)
 		list.append(self.cfg_showinextensions)
 		list.append(self.cfg_showinmainmenu)
-		self.list.append(self.cfg_loadepg_only)
+		list.append(self.cfg_loadepg_only)
 		if self.EPG.loadepg_only.value == "default":
-			self.list.append(self.cfg_import_onlybouquet)
+			list.append(self.cfg_import_onlybouquet)
 		list.append(self.cfg_import_onlyiptv)
 		if hasattr(enigma.eEPGCache, 'flushEPG'):
 			list.append(self.cfg_clear_oldepg)
