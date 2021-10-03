@@ -1,12 +1,12 @@
 from Components.MenuList import MenuList
-from Tools.Directories import resolveFilename, SCOPE_CURRENT_SKIN
+from Tools.Directories import resolveFilename, SCOPE_GUISKIN
 from enigma import eListboxPythonMultiContent, eListbox, gFont, RT_HALIGN_LEFT
 from Tools.LoadPixmap import LoadPixmap
 
 import skin
 
-expandableIcon = LoadPixmap(resolveFilename(SCOPE_CURRENT_SKIN, "icons/expandable.png"))
-expandedIcon = LoadPixmap(resolveFilename(SCOPE_CURRENT_SKIN, "icons/expanded.png"))
+expandableIcon = LoadPixmap(resolveFilename(SCOPE_GUISKIN, "icons/expandable.png"))
+expandedIcon = LoadPixmap(resolveFilename(SCOPE_GUISKIN, "icons/expanded.png"))
 
 
 def loadSettings():
@@ -40,9 +40,9 @@ def entry(description, value, selected):
 		(eListboxPythonMultiContent.TYPE_TEXT,) + entry_desc_loc + (0, RT_HALIGN_LEFT, description)
 	]
 	if selected:
-		selectionpng = LoadPixmap(cached=True, path=resolveFilename(SCOPE_CURRENT_SKIN, "icons/lock_on.png"))
+		selectionpng = LoadPixmap(cached=True, path=resolveFilename(SCOPE_GUISKIN, "icons/lock_on.png"))
 	else:
-		selectionpng = LoadPixmap(cached=True, path=resolveFilename(SCOPE_CURRENT_SKIN, "icons/lock_off.png"))
+		selectionpng = LoadPixmap(cached=True, path=resolveFilename(SCOPE_GUISKIN, "icons/lock_off.png"))
 	res.append((eListboxPythonMultiContent.TYPE_PIXMAP_ALPHATEST,) + entry_icon_loc + (selectionpng,))
 	return res
 
