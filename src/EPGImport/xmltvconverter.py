@@ -1,7 +1,7 @@
-from __future__ import print_function
+
 import time
 import calendar
-import log
+from . import log
 from xml.etree.cElementTree import iterparse
 from xml.sax.saxutils import unescape
 

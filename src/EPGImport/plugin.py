@@ -1,10 +1,10 @@
-from __future__ import print_function
+
 # for localized messages
 from . import _
 import time
 import os
 import enigma
-import log
+from . import log
 
 # Config
 from Components.config import config, ConfigEnableDisable, ConfigSubsection, ConfigYesNo, ConfigClock, getConfigListEntry, ConfigText, ConfigSelection, ConfigNumber, ConfigSubDict, NoSave
@@ -22,10 +22,10 @@ import Components.PluginComponent
 from Tools import Notifications
 from Tools.FuzzyDate import FuzzyTime
 from Tools.Directories import fileExists
-import ExpandableSelectionList
+from . import ExpandableSelectionList
 from Tools.StbHardware import getFPWasTimerWakeup
 import NavigationInstance
-import filtersServices
+from . import filtersServices
 
 
 def lastMACbyte():
@@ -93,8 +93,8 @@ weekdays = [
 	]
 
 # Plugin
-import EPGImport
-import EPGConfig
+from . import EPGImport
+from . import EPGConfig
 
 # Plugin definition
 from Plugins.Plugin import PluginDescriptor
@@ -354,7 +354,7 @@ class EPGImportConfig(ConfigListScreen, Screen):
 	def initConfig(self):
 		def getPrevValues(section):
 			res = {}
-			for (key, val) in section.content.items.items():
+			for (key, val) in list(section.content.items.items()):
 				if isinstance(val, ConfigSubsection):
 					res[key] = getPrevValues(val)
 				else:
@@ -420,7 +420,7 @@ class EPGImportConfig(ConfigListScreen, Screen):
 
 	def keyRed(self):
 		def setPrevValues(section, values):
-			for (key, val) in section.content.items.items():
+			for (key, val) in list(section.content.items.items()):
 				value = values.get(key, None)
 				if value is not None:
 					if isinstance(val, ConfigSubsection):

@@ -3,7 +3,7 @@
 # Heavily modified by MiLo http://www.sat4all.com/
 # Lots of stuff removed that i did not need.
 
-from __future__ import print_function
+
 import os
 import struct
 from datetime import datetime
@@ -96,10 +96,10 @@ except:
 		# ML Optimized: local CRCTABLE (locals are faster), remove self, remove code that has no effect, faster loop
 		#crc=0x00000000L
 		#crc=((crc << 8 ) & 0xffffff00L) ^ crctable[((crc >> 24) ^ crctype) & 0x000000ffL ]
-		crc = crctable[crctype & 0x000000ffL]
-		crc = ((crc << 8) & 0xffffff00L) ^ crctable[((crc >> 24) ^ len(crcdata)) & 0x000000ffL]
+		crc = crctable[crctype & 0x000000ff]
+		crc = ((crc << 8) & 0xffffff00) ^ crctable[((crc >> 24) ^ len(crcdata)) & 0x000000ff]
 		for d in crcdata:
-		    crc = ((crc << 8) & 0xffffff00L) ^ crctable[((crc >> 24) ^ ord(d)) & 0x000000ffL]
+		    crc = ((crc << 8) & 0xffffff00) ^ crctable[((crc >> 24) ^ ord(d)) & 0x000000ff]
 		return crc
 
 # convert time or length from datetime format to 3 bytes hex value
