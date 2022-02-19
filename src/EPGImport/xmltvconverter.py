@@ -51,7 +51,7 @@ def get_xml_string(elem, name):
                                   r"&#124;": r"|", r"&nbsp;": r" ",
                                   r"&#91;": r"[", r"&#93;": r"]", })
 
-        return r.encode('utf-8')
+	return r.encode('utf-8')
 
 
 def enumerateProgrammes(fp):
