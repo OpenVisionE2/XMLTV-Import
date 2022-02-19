@@ -8,7 +8,7 @@ from Screens.ChannelSelection import service_types_radio, service_types_tv, Chan
 from enigma import eServiceReference, eServiceCenter
 from Components.Sources.List import List
 from Components.Label import Label
-import EPGConfig
+from . import EPGConfig
 import os
 
 OFF = 0

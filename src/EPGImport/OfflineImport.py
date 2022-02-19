@@ -6,11 +6,11 @@
 # where they can be found. On Linux, you can also download from the internet,
 # on windows the xmltv files must be local files.
 #
-from __future__ import print_function
+
 import sys
 import time
-import EPGConfig
-import EPGImport
+from . import EPGConfig
+from . import EPGImport
 
 EPGImport.HDD_EPG_DAT = "./epg.dat.new"
 
@@ -40,7 +40,7 @@ def importFrom(epgimport, sourceXml):
 				if self.r is r:
 					self.r = None
 				else:
-					raise Exception, "Removed reader without adding it"
+					raise Exception("Removed reader without adding it")
 
 			def run(self):
 				while self.r is not None:

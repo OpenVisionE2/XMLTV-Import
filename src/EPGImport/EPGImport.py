@@ -4,8 +4,8 @@
 # you can supply a similar interface. See plugin.py and OfflineImport.py for
 # the contract.
 #
-from __future__ import absolute_import
-from __future__ import print_function
+
+
 import time
 import os
 import gzip
@@ -34,10 +34,10 @@ except:
 
 
 if pythonVer == 2:
-    import urllib2
-    import httplib
+    import urllib.request, urllib.error, urllib.parse
+    import http.client
 else:
-    import urllib
+    import urllib.request, urllib.parse, urllib.error
     # import http_client
 
 # import urllib2, httplib
@@ -62,7 +62,7 @@ except:
 
 if sslverify:
     try:
-        from urlparse import urlparse
+        from urllib.parse import urlparse
     except:
         from urllib.parse import urlparse
 
@@ -168,7 +168,7 @@ class EPGImport:
         # req = urllib2.build_opener()
 
         if pythonVer == 2:
-            req = urllib2.build_opener()
+            req = urllib.request.build_opener()
         else:
             req = urllib.request.build_opener()
 
@@ -182,13 +182,13 @@ class EPGImport:
             if pythonVer == 2:
                 try:
                     response = req.open(FullString)
-                except urllib2.HTTPError as e:
+                except urllib.error.HTTPError as e:
                     print('[EPGImport] HTTPError in checkValidServer= ' + str(e.code))
                     dlderror = 1
-                except urllib2.URLError as e:
+                except urllib.error.URLError as e:
                     print('[EPGImport] URLError in checkValidServer= ' + str(e.reason))
                     dlderror = 1
-                except httplib.HTTPException as e:
+                except http.client.HTTPException as e:
                     print('[EPGImport] HTTPException in checkValidServer')
                     dlderror = 1
                 except Exception:

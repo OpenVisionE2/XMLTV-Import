@@ -1,9 +1,9 @@
-from __future__ import print_function
+
 import os
-import log
+from . import log
 from xml.etree.cElementTree import iterparse
 try:
-	import cPickle as pickle
+	import pickle as pickle
 except:
 	import pickle
 import gzip
@@ -55,7 +55,7 @@ class EPGChannel:
 	def openStream(self, filename):
 		fd = open(filename, 'rb')
 		if not os.fstat(fd.fileno()).st_size:
-			raise Exception, "File is empty"
+			raise Exception("File is empty")
 		if filename.endswith('.gz'):
 			fd = gzip.GzipFile(fileobj=fd, mode='rb')
 		elif filename.endswith('.xz') or filename.endswith('.lzma'):
@@ -213,7 +213,7 @@ if __name__ == '__main__':
 		assert t in l
 		l.remove(t)
 	assert not l
-	for name, c in channelCache.items():
+	for name, c in list(channelCache.items()):
 		print("Update:", name)
 		c.update()
 		print("# of channels:", len(c.items))
