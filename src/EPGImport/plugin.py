@@ -4,7 +4,7 @@ from . import _
 import time
 import os
 import enigma
-import log
+from . import log
 
 # Config
 from Components.config import config, ConfigEnableDisable, ConfigSubsection, ConfigYesNo, ConfigClock, getConfigListEntry, ConfigText, ConfigSelection, ConfigNumber, ConfigSubDict, NoSave
@@ -22,10 +22,10 @@ import Components.PluginComponent
 from Tools import Notifications
 from Tools.FuzzyDate import FuzzyTime
 from Tools.Directories import fileExists
-import ExpandableSelectionList
+from . import ExpandableSelectionList
 from Tools.StbHardware import getFPWasTimerWakeup
 import NavigationInstance
-import filtersServices
+from . import filtersServices
 
 
 def lastMACbyte():
@@ -93,8 +93,8 @@ weekdays = [
 	]
 
 # Plugin
-import EPGImport
-import EPGConfig
+from . import EPGImport
+from . import EPGConfig
 
 # Plugin definition
 from Plugins.Plugin import PluginDescriptor

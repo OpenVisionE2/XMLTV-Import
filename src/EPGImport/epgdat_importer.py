@@ -1,5 +1,5 @@
 from __future__ import print_function
-import epgdat
+from . import epgdat
 import os
 import sys
 

@@ -1,6 +1,6 @@
 from __future__ import print_function
 import os
-import log
+from . import log
 from xml.etree.cElementTree import iterparse
 try:
 	import cPickle as pickle

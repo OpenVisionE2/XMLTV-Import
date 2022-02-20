@@ -9,8 +9,8 @@
 from __future__ import print_function
 import sys
 import time
-import EPGConfig
-import EPGImport
+from . import EPGConfig
+from . import EPGImport
 
 EPGImport.HDD_EPG_DAT = "./epg.dat.new"
 
