@@ -1,4 +1,4 @@
-XMTV-Import [![License: GPL v3](https://img.shields.io/badge/License-GPLv2-blue.svg)](https://www.gnu.org/licenses/gpl-2.0)
+XMTV-Import [![License: GPL v3](https://img.shields.io/badge/License-GPLv2-blue.svg)](https://www.gnu.org/licenses/gpl-2.0) [![xmltvimport](https://github.com/OpenVisionE2/XMLTV-Import/actions/workflows/xmltvimport.yml/badge.svg)](https://github.com/OpenVisionE2/XMLTV-Import/actions/workflows/xmltvimport.yml) [![ovbot](https://github.com/OpenVisionE2/XMLTV-Import/actions/workflows/ovbot.yml/badge.svg)](https://github.com/OpenVisionE2/XMLTV-Import/actions/workflows/ovbot.yml)
 ===========
 
 Import's EPG data from rytec and other xml data sources.
