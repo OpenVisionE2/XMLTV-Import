@@ -26,6 +26,7 @@ class FakeEnigma:
 #		print args
 
 
+
 def importFrom(epgimport, sourceXml):
 	# Hack to make this test run on Windows (where the reactor cannot handle files)
 	if sys.platform.startswith('win'):
