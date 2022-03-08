@@ -527,7 +527,7 @@ class EPGImport:
         ip6 = sourcefile6 = None
         if has_ipv6 and version_info >= (2, 7, 11) and ((version.major == 15 and version.minor >= 5) or version.major >= 16):
             host = sourcefile.split('/')[2]
-            Headers={six.ensure_binary('host'): six.ensure_binary(host)} if six.PY3 else {'host': host}
+            Headers = {six.ensure_binary('host'): six.ensure_binary(host)} if six.PY3 else {'host': host}
             try:         # getaddrinfo throws exception on literal IPv4 addresses
                 ip6 = getaddrinfo(host, 0, AF_INET6)
                 sourcefile6 = sourcefile.replace(host, '[' + list(ip6)[0][4][0] + ']')
