@@ -53,7 +53,6 @@ def get_xml_string(elem, name):
 	return r.encode('utf-8')
 
 
-
 def enumerateProgrammes(fp):
 	"""Enumerates programme ElementTree nodes from file object 'fp'"""
 	for event, elem in iterparse(fp):
