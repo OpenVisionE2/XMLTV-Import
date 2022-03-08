@@ -531,8 +531,8 @@ class EPGImport:
             try:         # getaddrinfo throws exception on literal IPv4 addresses
                 ip6 = getaddrinfo(host, 0, AF_INET6)
                 sourcefile6 = sourcefile.replace(host, '[' + list(ip6)[0][4][0] + ']')
-                if six.PY3:            
-                    sourcefile6 = sourcefile6.encode()                 
+                if six.PY3:
+                    sourcefile6 = sourcefile6.encode()
             except:
                 pass
         print("[EPGImport] IPv6=%s" % ip6)
