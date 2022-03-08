@@ -41,7 +41,7 @@ class epgdatclass:
 			self.epg.add_event(program[0], program[1], program[2], desc)
 
 	def commitService(self):
-		if self.services is not None:
+		if self.services != None:
 			self.epg.preprocess_events_channel(self.services)
 
 	def epg_done(self):
@@ -63,5 +63,5 @@ class epgdatclass:
 
 	def __del__(self):
 		'Destructor - finalize the file when done'
-		if self.epg is not None:
+		if self.epg != None:
 			self.epg_done()
