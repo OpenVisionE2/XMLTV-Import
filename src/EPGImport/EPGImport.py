@@ -376,7 +376,7 @@ class EPGImport:
                 print("[EPGImport] warning: Could not remove '%s' intermediate" % filename, e, file=log)
 
     def fileno(self):
-        if self.fd != None:
+        if self.fd is not None:
             return self.fd.fileno()
         else:
             return
@@ -384,7 +384,7 @@ class EPGImport:
     def doThreadRead(self, filename):
         """This is used on PLi with threading"""
         for data in self.createIterator(filename):
-            if data != None:
+            if data is not None:
                 self.eventCount += 1
                 try:
                     r, d = data
@@ -410,7 +410,7 @@ class EPGImport:
             # data = self.iterator.next()
             data = next(self.iterator)
 
-            if data != None:
+            if data is not None:
                 self.eventCount += 1
                 try:
                     r, d = data
@@ -455,7 +455,7 @@ class EPGImport:
         return '[EPGImport]'
 
     def closeReader(self):
-        if self.fd != None:
+        if self.fd is not None:
             reactor.removeReader(self)
             self.fd.close()
             self.fd = None
@@ -471,7 +471,7 @@ class EPGImport:
         else:
             needLoad = None
         self.storage = None
-        if self.eventCount != None:
+        if self.eventCount is not None:
             print("[EPGImport] imported %d events" % self.eventCount, file=log)
             reboot = False
             if self.eventCount:
@@ -500,7 +500,7 @@ class EPGImport:
         return
 
     def isImportRunning(self):
-        return self.source != None
+        return self.source is not None
 
     def legacyDownload(self, result, afterDownload, downloadFail, sourcefile, filename, deleteFile=True):
         print("[EPGImport] IPv6 download failed, falling back to IPv4: " + str(sourcefile), file=log)
