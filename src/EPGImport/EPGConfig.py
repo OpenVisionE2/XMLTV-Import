@@ -96,7 +96,7 @@ class EPGChannel:
 		if os.path.exists(customFile):
 			print("[EPGImport] Parsing channels from '%s'" % customFile, file=log)
 			self.parse(filterCallback, customFile)
-		if downloadedFile != None:
+		if downloadedFile is not None:
 			self.mtime = time.time()
 			return self.parse(filterCallback, downloadedFile)
 		elif (len(self.urls) == 1) and isLocalFile(self.urls[0]):

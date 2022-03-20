@@ -422,7 +422,7 @@ class EPGImportConfig(ConfigListScreen, Screen):
 		def setPrevValues(section, values):
 			for (key, val) in section.content.items.items():
 				value = values.get(key, None)
-				if value != None:
+				if value is not None:
 					if isinstance(val, ConfigSubsection):
 						setPrevValues(val, value)
 					else:
@@ -437,7 +437,7 @@ class EPGImportConfig(ConfigListScreen, Screen):
 		if self.EPG.shutdown.value:
 			self.EPG.standby_afterwakeup.value = False
 		self.EPG.save()
-		if self.prev_onlybouquet != config.plugins.epgimport.import_onlybouquet.value or (autoStartTimer != None and autoStartTimer.prev_multibouquet != config.usage.multibouquet.value):
+		if self.prev_onlybouquet != config.plugins.epgimport.import_onlybouquet.value or (autoStartTimer is not None and autoStartTimer.prev_multibouquet != config.usage.multibouquet.value):
 			EPGConfig.channelCache = {}
 		self.close(True, self.session)
 
@@ -480,7 +480,7 @@ class EPGImportConfig(ConfigListScreen, Screen):
 			print("[XMLTVImport] Already running, won't start again", file=log)
 			self.session.open(MessageBox, _("EPGImport\nImport of epg data is still in progress. Please wait."), MessageBox.TYPE_ERROR, timeout=10, close_on_any_key=True)
 			return
-		if self.prev_onlybouquet != config.plugins.epgimport.import_onlybouquet.value or (autoStartTimer != None and autoStartTimer.prev_multibouquet != config.usage.multibouquet.value):
+		if self.prev_onlybouquet != config.plugins.epgimport.import_onlybouquet.value or (autoStartTimer is not None and autoStartTimer.prev_multibouquet != config.usage.multibouquet.value):
 			EPGConfig.channelCache = {}
 		if one_source is None:
 			cfg = EPGConfig.loadUserSettings()
@@ -511,7 +511,7 @@ class EPGImportConfig(ConfigListScreen, Screen):
 	def sourcesDone(self, confirmed, sources, cfg):
 		# Called with True and list of config items on Okay.
 		print("sourcesDone(): ", confirmed, sources, file=log)
-		if cfg != None:
+		if cfg is not None:
 			self.doimport(one_source=cfg)
 
 	def openMenu(self):
@@ -745,7 +745,7 @@ class EPGImportDownloader(MessageBox):
 def msgClosed(ret):
 	global autoStartTimer
 	if ret:
-		if autoStartTimer != None and not epgimport.isImportRunning():
+		if autoStartTimer is not None and not epgimport.isImportRunning():
 			print("[XMLTVImport] Run manual starting import", file=log)
 			autoStartTimer.runImport()
 
@@ -767,7 +767,7 @@ def main_menu(menuid, **kwargs):
 
 def doneConfiguring(session, retval):
 	"user has closed configuration, check new values...."
-	if autoStartTimer != None:
+	if autoStartTimer is not None:
 		autoStartTimer.update()
 
 
@@ -1055,7 +1055,7 @@ def autostart(reason, session=None, **kwargs):
 	global _session
 	print("[XMLTVImport] autostart (%s) occured at" % reason, time.time(), file=log)
 	if reason == 0 and _session is None:
-		if session != None:
+		if session is not None:
 			_session = session
 			if autoStartTimer is None:
 				autoStartTimer = AutoStartTimer(session)

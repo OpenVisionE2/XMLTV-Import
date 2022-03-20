@@ -260,7 +260,7 @@ class filtersServicesSelection(ChannelSelectionBase):
 				menu = [(_("All services provider"), "providerlist")]
 
 				def addAction(choice):
-					if choice != None:
+					if choice is not None:
 						if choice[1] == "providerlist":
 							serviceHandler = eServiceCenter.getInstance()
 							servicelist = serviceHandler.list(ref)
