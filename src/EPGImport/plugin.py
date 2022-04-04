@@ -731,8 +731,6 @@ class EPGImportLog(Screen):
 		self.close(False)
 
 	def clear(self):
-		log.logfile.reset()
-		log.logfile.truncate()
 		self.close(False)
 
 
