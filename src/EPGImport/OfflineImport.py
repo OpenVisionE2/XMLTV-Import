@@ -6,7 +6,18 @@
 # where they can be found. On Linux, you can also download from the internet,
 # on windows the xmltv files must be local files.
 #
-
+#
+# On python 3 running this file as a script will result in import errors
+# so run it as a module.
+#
+# 1) Rename existing EPGImport/__init__py to x__init__py and offline__init__py to __init__py
+# 2) At the command line go to the parent directory of EPGImport:
+# 3) cd /usr/lib/enigma2/python/Plugins/Extensions
+# 4) Now run as a module from the command line:
+# 5) python -m EPGImport.OfflineImport <filename args>  e.g. python -m EPGImport.OfflineImport /etc/rytec.sources.xml (> /tmp.log)
+# 6) Reinstate your renamed __init__.py
+#
+# called modules EPGImport, epgdat, epgdat_importer, log
 import sys
 import time
 from . import EPGConfig
