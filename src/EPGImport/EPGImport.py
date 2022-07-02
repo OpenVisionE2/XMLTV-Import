@@ -542,9 +542,13 @@ class EPGImport:
                 parsed_uri = urlparse(sourcefile)
                 domain = parsed_uri.hostname
                 sniFactory = SNIFactory(domain)
-                downloadPage(sourcefile6, filename, sniFactory, headers=Headers).addCallback(afterDownload, filename, True).addErrback(self.legacyDownload, afterDownload, downloadFail, sourcefile, filename, True)
+                if pythonVer == 3:
+                    sourcefile6 = sourcefile6.encode()
+                downloadPage(sourcefile6, filename, sniFactory, headers={'host': host}, timeout=90).addCallback(afterDownload, filename, True).addErrback(self.legacyDownload, afterDownload, downloadFail, sourcefile, filename, True)
             else:
-                 downloadPage(sourcefile6, filename, headers=Headers).addCallback(afterDownload, filename, True).addErrback(self.legacyDownload, afterDownload, downloadFail, sourcefile, filename, True)
+                if pythonVer == 3:
+                    sourcefile6 = sourcefile6.encode()
+                downloadPage(sourcefile6, filename, headers={'host': host}, timeout=90).addCallback(afterDownload, filename, True).addErrback(self.legacyDownload, afterDownload, downloadFail, sourcefile, filename, True)
 
         else:
             print("[EPGImport] No IPv6, using IPv4 directly: " + str(sourcefile), file=log)
@@ -554,7 +558,11 @@ class EPGImport:
                 parsed_uri = urlparse(sourcefile)
                 domain = parsed_uri.hostname
                 sniFactory = SNIFactory(domain)
-                downloadPage(sourcefile4, filename, sniFactory).addCallbacks(afterDownload, downloadFail, callbackArgs=(filename, True))
+                if pythonVer == 3:
+                    sourcefile = sourcefile.encode()
+                downloadPage(sourcefile, filename, sniFactory, timeout=90).addCallbacks(afterDownload, downloadFail, callbackArgs=(filename, True))
             else:
-                downloadPage(sourcefile4, filename).addCallbacks(afterDownload, downloadFail, callbackArgs=(filename, True))
+                if pythonVer == 3:
+                    sourcefile = sourcefile.encode()
+                downloadPage(sourcefile, filename, timeout=90).addCallbacks(afterDownload, downloadFail, callbackArgs=(filename, True))
         return filename
