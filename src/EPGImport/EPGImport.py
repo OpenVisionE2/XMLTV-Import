@@ -550,13 +550,9 @@ class EPGImport:
                 parsed_uri = urlparse(sourcefile)
                 domain = parsed_uri.hostname
                 sniFactory = SNIFactory(domain)
-                if pythonVer == 3:
-                    sourcefile6 = sourcefile6.encode()
-                downloadPage(sourcefile6, filename, sniFactory, headers={'host': host}, timeout=90).addCallback(afterDownload, filename, True).addErrback(self.legacyDownload, afterDownload, downloadFail, sourcefile, filename, True)
+                downloadPage(sourcefile6, filename, sniFactory, headers=Headers, timeout=90).addCallback(afterDownload, filename, True).addErrback(self.legacyDownload, afterDownload, downloadFail, sourcefile, filename, True)
             else:
-                if pythonVer == 3:
-                    sourcefile6 = sourcefile6.encode()
-                downloadPage(sourcefile6, filename, headers={'host': host}, timeout=90).addCallback(afterDownload, filename, True).addErrback(self.legacyDownload, afterDownload, downloadFail, sourcefile, filename, True)
+                 downloadPage(sourcefile6, filename, headers=Headers, timeout=90).addCallback(afterDownload, filename, True).addErrback(self.legacyDownload, afterDownload, downloadFail, sourcefile, filename, True)
 
         else:
             print("[EPGImport] No IPv6, using IPv4 directly: " + str(sourcefile), file=log)
@@ -566,11 +562,7 @@ class EPGImport:
                 parsed_uri = urlparse(sourcefile)
                 domain = parsed_uri.hostname
                 sniFactory = SNIFactory(domain)
-                if pythonVer == 3:
-                    sourcefile = sourcefile.encode()
-                downloadPage(sourcefile, filename, sniFactory, timeout=90).addCallbacks(afterDownload, downloadFail, callbackArgs=(filename, True))
+                downloadPage(sourcefile4, filename, sniFactory, timeout=90).addCallbacks(afterDownload, downloadFail, callbackArgs=(filename, True))
             else:
-                if pythonVer == 3:
-                    sourcefile = sourcefile.encode()
-                downloadPage(sourcefile, filename, timeout=90).addCallbacks(afterDownload, downloadFail, callbackArgs=(filename, True))
+                downloadPage(sourcefile4, filename, timeout=90).addCallbacks(afterDownload, downloadFail, callbackArgs=(filename, True))
         return filename
