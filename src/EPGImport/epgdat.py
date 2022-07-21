@@ -192,7 +192,7 @@ class epgdat_class:
 		num_tot_desc = (len(ldbytes) + 244) // 245
 		for i in range(num_tot_desc):
 			ssub = ldbytes[i * 245:i * 245 + 245]
-			ldbin = self.s_B3sBBB.pack((i << 4) + (num_tot_desc-1), beng, 0x00, int(len(ssub) + 1), 0x15) + ssub
+			ldbin = self.s_B3sBBB.pack((i << 4) + (num_tot_desc - 1), beng, 0x00, int(len(ssub) + 1), 0x15) + ssub
 			ldres.append((crc32_dreambox(ldbin, 0x4e), ldbin))
 		return ldres
 
