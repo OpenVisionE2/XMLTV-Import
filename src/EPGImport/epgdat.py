@@ -105,6 +105,8 @@ except:
 
 # convert time or duration from datetime format to 3 bytes hex value
 # this doesn't convert to hex but obviously the originators thought it did, and is part of EPG structure definitions.
+
+
 def TL_hexconv(dt):
 	return (
 		(dt.hour % 10) + (16 * (dt.hour // 10)),
