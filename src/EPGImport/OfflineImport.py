@@ -1,4 +1,4 @@
-#!/usr/bin/python
+# -*- coding: utf-8 -*-
 #
 # To test this script on something that is not a Dreambox, such as a Windows PC
 # just run it with Python. You'll need Python's "twisted" library.
