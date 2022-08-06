@@ -18,6 +18,7 @@ commit_files() {
   ./CI/dos2unix.sh
   ./CI/PEP8.sh
   ./CI/futurize.sh
+  ./CI/header.sh
   ./CI/xml.sh
   ./CI/chmod.sh
   ./CI/dos2unix.sh
