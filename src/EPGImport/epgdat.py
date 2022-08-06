@@ -1,9 +1,8 @@
-#!/usr/bin/python
+# -*- coding: utf-8 -*-
 # epgdat.py  by Ambrosa http://www.dreamboxonline.com
 # Heavily modified by MiLo http://www.sat4all.com/
 # Lots of stuff removed that i did not need.
 
-from __future__ import print_function
 import os
 import struct
 from datetime import datetime

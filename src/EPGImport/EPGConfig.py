@@ -1,4 +1,4 @@
-from __future__ import print_function
+# -*- coding: utf-8 -*-
 import os
 from . import log
 from xml.etree.cElementTree import iterparse

@@ -1,4 +1,4 @@
-from __future__ import print_function
+# -*- coding: utf-8 -*-
 from . import xmltvconverter
 
 date_format = '%Y%m%d%H%M%S'

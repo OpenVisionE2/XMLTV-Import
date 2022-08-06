@@ -1,11 +1,10 @@
-#!/usr/bin/python
+# -*- coding: utf-8 -*-
 #
 # This file no longer has a direct link to Enigma2, allowing its use anywhere
 # you can supply a similar interface. See plugin.py and OfflineImport.py for
 # the contract.
 #
 from __future__ import absolute_import
-from __future__ import print_function
 import time
 import os
 import gzip
