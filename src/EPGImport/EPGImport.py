@@ -19,9 +19,9 @@ from twisted.web.client import downloadPage
 import twisted.python.runtime
 
 import sys
-import six
+from six import PY2, PY3, ensure_binary
 
-if six.PY2:
+if PY2:
     import urllib2
     import httplib
 else:
@@ -51,10 +51,7 @@ except:
     sslverify = False
 
 if sslverify:
-    try:
-        from urllib.parse import urlparse
-    except:
-        from urllib.parse import urlparse
+    from six.moves.urllib.parse import urlparse
 
     class SNIFactory(ssl.ClientContextFactory):
         def __init__(self, hostname=None):
@@ -162,7 +159,7 @@ class EPGImport:
         FullString = dirname + '/' + CheckFile
         # req = urllib2.build_opener()
 
-        if six.PY2:
+        if PY2:
             req = urllib2.build_opener()
         else:
             req = urllib.request.build_opener()
@@ -174,7 +171,7 @@ class EPGImport:
             return ServerStatusList[dirname]
         else:
             # Server not in the list so checking it
-            if six.PY2:
+            if PY2:
                 try:
                     response = req.open(FullString)
                 except urllib.error.HTTPError as e:
@@ -511,7 +508,7 @@ class EPGImport:
 
     def legacyDownload(self, result, afterDownload, downloadFail, sourcefile, filename, deleteFile=True):
         print("[EPGImport] IPv6 download failed, falling back to IPv4: " + str(sourcefile), file=log)
-        sourcefile4 = sourcefile.encode() if six.PY3 else sourcefile
+        sourcefile4 = sourcefile.encode() if PY3 else sourcefile
         if sourcefile.startswith("https") and sslverify:
             parsed_uri = urlparse(sourcefile)
             domain = parsed_uri.hostname
@@ -534,11 +531,11 @@ class EPGImport:
         ip6 = sourcefile6 = None
         if has_ipv6 and version_info >= (2, 7, 11) and ((version.major == 15 and version.minor >= 5) or version.major >= 16):
             host = sourcefile.split('/')[2]
-            Headers = {six.ensure_binary('host'): six.ensure_binary(host)} if six.PY3 else {'host': host}
+            Headers = {ensure_binary('host'): ensure_binary(host)} if PY3 else {'host': host}
             try:         # getaddrinfo throws exception on literal IPv4 addresses
                 ip6 = getaddrinfo(host, 0, AF_INET6)
                 sourcefile6 = sourcefile.replace(host, '[' + list(ip6)[0][4][0] + ']')
-                if six.PY3:
+                if PY3:
                     sourcefile6 = sourcefile6.encode()
             except:
                 pass
@@ -555,7 +552,7 @@ class EPGImport:
 
         else:
             print("[EPGImport] No IPv6, using IPv4 directly: " + str(sourcefile), file=log)
-            if six.PY3:
+            if PY3:
                 sourcefile4 = sourcefile4.encode()
             if sourcefile.startswith("https") and sslverify:
                 parsed_uri = urlparse(sourcefile)
