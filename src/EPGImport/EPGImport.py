@@ -4,8 +4,7 @@
 # you can supply a similar interface. See plugin.py and OfflineImport.py for
 # the contract.
 #
-
-
+from __future__ import print_function
 import time
 import os
 import gzip

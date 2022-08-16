@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-
+from __future__ import print_function
 import os
 from . import log
 from xml.etree.cElementTree import iterparse
