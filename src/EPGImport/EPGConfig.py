@@ -4,7 +4,7 @@ import os
 from . import log
 from xml.etree.cElementTree import iterparse
 try:
-	import pickle as pickle
+	import cPickle as pickle
 except:
 	import pickle
 import gzip
