@@ -57,7 +57,7 @@ config.plugins.epgimport.runboot = ConfigSelection(default="4", choices=[
 		])
 config.plugins.epgimport.runboot_restart = ConfigYesNo(default=False)
 config.plugins.epgimport.runboot_day = ConfigYesNo(default=False)
-config.plugins.epgimport.wakeupsleep = ConfigEnableDisable(default=False)
+#config.plugins.epgimport.wakeupsleep = ConfigEnableDisable(default=False)
 config.plugins.epgimport.wakeup = ConfigClock(default=calcDefaultStarttime())
 config.plugins.epgimport.showinplugins = ConfigYesNo(default=True)
 config.plugins.epgimport.showinextensions = ConfigYesNo(default=True)
