@@ -75,7 +75,7 @@ class EPGChannel:
 				if elem.tag == 'channel':
 					id = elem.get('id')
 					id = id.lower()
-					ref = str(elem.text)
+					ref = elem.text
 					if id and ref:
 						ref = ensure_str(ref)
 						if filterCallback(ref):
