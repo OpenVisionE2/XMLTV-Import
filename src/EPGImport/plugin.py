@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 from __future__ import print_function
+from __future__ import division
+from __future__ import absolute_import
 from . import _
 import time
 import os
@@ -21,7 +23,7 @@ from Components.ScrollLabel import ScrollLabel
 import Components.PluginComponent
 from Tools import Notifications
 from Tools.FuzzyDate import FuzzyTime
-from Tools.Directories import fileExists
+from Tools.Directories import fileExists, isPluginInstalled
 from . import ExpandableSelectionList
 from Tools.StbHardware import getFPWasTimerWakeup
 import NavigationInstance
@@ -55,7 +57,9 @@ config.plugins.epgimport.runboot = ConfigSelection(default="4", choices=[
 		])
 config.plugins.epgimport.runboot_restart = ConfigYesNo(default=False)
 config.plugins.epgimport.runboot_day = ConfigYesNo(default=False)
+config.plugins.epgimport.wakeupsleep = ConfigEnableDisable(default=False)
 config.plugins.epgimport.wakeup = ConfigClock(default=calcDefaultStarttime())
+config.plugins.epgimport.showinplugins = ConfigYesNo(default=True)
 config.plugins.epgimport.showinextensions = ConfigYesNo(default=True)
 config.plugins.epgimport.deepstandby = ConfigSelection(default="skip", choices=[
 		("wakeup", _("wake up and import")),
@@ -354,7 +358,7 @@ class EPGImportConfig(ConfigListScreen, Screen):
 	def initConfig(self):
 		def getPrevValues(section):
 			res = {}
-			for (key, val) in list(section.content.items.items()):
+			for (key, val) in section.content.items.items():
 				if isinstance(val, ConfigSubsection):
 					res[key] = getPrevValues(val)
 				else:
@@ -375,6 +379,7 @@ class EPGImportConfig(ConfigListScreen, Screen):
 		self.cfg_runboot_day = getConfigListEntry(_("Consider setting \"Days Profile\""), self.EPG.runboot_day)
 		self.cfg_runboot_restart = getConfigListEntry(_("Skip import on restart GUI"), self.EPG.runboot_restart)
 		self.cfg_showinextensions = getConfigListEntry(_("Show \"EPGImport\" in extensions"), self.EPG.showinextensions)
+		self.cfg_showinplugins = getConfigListEntry(_("Show \"EPGImport\" in plugins"), self.EPG.showinplugins)
 		self.cfg_showinmainmenu = getConfigListEntry(_("Show \"EPG Importer\" in main menu"), self.EPG.showinmainmenu)
 		self.cfg_longDescDays = getConfigListEntry(_("Load long descriptions up to X days"), self.EPG.longDescDays)
 		self.cfg_parse_autotimer = getConfigListEntry(_("Run AutoTimer after import"), self.EPG.parse_autotimer)
@@ -396,6 +401,7 @@ class EPGImportConfig(ConfigListScreen, Screen):
 			if self.EPG.runboot.value == "1" or self.EPG.runboot.value == "2":
 				list.append(self.cfg_runboot_restart)
 		list.append(self.cfg_showinextensions)
+		list.append(self.cfg_showinplugins)
 		list.append(self.cfg_showinmainmenu)
 		list.append(self.cfg_loadepg_only)
 		if self.EPG.loadepg_only.value == "default":
@@ -404,7 +410,7 @@ class EPGImportConfig(ConfigListScreen, Screen):
 		if hasattr(enigma.eEPGCache, 'flushEPG'):
 			list.append(self.cfg_clear_oldepg)
 		list.append(self.cfg_longDescDays)
-		if fileExists("/usr/lib/enigma2/python/Plugins/Extensions/AutoTimer/plugin.py"):
+		if isPluginInstalled("AutoTimer"):
 			try:
 				from Plugins.Extensions.AutoTimer.AutoTimer import AutoTimer
 				list.append(self.cfg_parse_autotimer)
@@ -420,7 +426,7 @@ class EPGImportConfig(ConfigListScreen, Screen):
 
 	def keyRed(self):
 		def setPrevValues(section, values):
-			for (key, val) in list(section.content.items.items()):
+			for (key, val) in section.content.items.items():
 				value = values.get(key, None)
 				if value is not None:
 					if isinstance(val, ConfigSubsection):
@@ -432,7 +438,7 @@ class EPGImportConfig(ConfigListScreen, Screen):
 
 	def keyGreen(self):
 		self.updateTimer.stop()
-		if not fileExists("/usr/lib/enigma2/python/Plugins/Extensions/AutoTimer/plugin.py") and self.EPG.parse_autotimer.value:
+		if not isPluginInstalled("AutoTimer") and self.EPG.parse_autotimer.value:
 			self.EPG.parse_autotimer.value = False
 		if self.EPG.shutdown.value:
 			self.EPG.standby_afterwakeup.value = False
@@ -792,7 +798,7 @@ def doneImport(reboot=False, epgfile=None):
 			_session.openWithCallback(restartEnigma, MessageBox, msg, MessageBox.TYPE_YESNO, timeout=15, default=True)
 			print("[XMLTVImport] Need restart enigma2", file=log)
 	else:
-		if config.plugins.epgimport.parse_autotimer.value and fileExists("/usr/lib/enigma2/python/Plugins/Extensions/AutoTimer/plugin.py"):
+		if config.plugins.epgimport.parse_autotimer.value and isPluginInstalled("AutoTimer"):
 			try:
 				from Plugins.Extensions.AutoTimer.plugin import autotimer
 				if autotimer is None:
@@ -1099,13 +1105,21 @@ def setExtensionsmenu(el):
 
 description = _("Automated EPG Importer")
 config.plugins.epgimport.showinextensions.addNotifier(setExtensionsmenu, initial_call=False, immediate_feedback=False)
-extDescriptor = PluginDescriptor(name=_("EPGImport"), description=description, where=PluginDescriptor.WHERE_EXTENSIONSMENU, fnc=extensionsmenu)
+extDescriptor = PluginDescriptor(name=_("EPG-Importer"), description=description, where=PluginDescriptor.WHERE_EXTENSIONSMENU, fnc=extensionsmenu)
+pluginlist = PluginDescriptor(name=_("EPG-Importer"), description=description, where=PluginDescriptor.WHERE_PLUGINMENU, icon='plugin.png', fnc=main)
+
+
+def epgmenu(menuid, **kwargs):
+	if menuid == "setup":
+		return [(_("EPG-Importer"), main, "epgimporter", 1002)]
+	else:
+		return []
 
 
 def Plugins(**kwargs):
 	result = [
 		PluginDescriptor(
-			name="EPGImport",
+			name=_("EPG-Importer"),
 			description=description,
 			where=[
 				PluginDescriptor.WHERE_AUTOSTART,
@@ -1115,14 +1129,7 @@ def Plugins(**kwargs):
 			wakeupfnc=getNextWakeup
 		),
 		PluginDescriptor(
-			name=_("EPGImport"),
-			description=description,
-			where=PluginDescriptor.WHERE_PLUGINMENU,
-			icon='plugin.png',
-			fnc=main
-		),
-		PluginDescriptor(
-			name="EPG importer",
+			name=_("EPG-Importer"),
 			description=description,
 			where=PluginDescriptor.WHERE_MENU,
 			fnc=main_menu
@@ -1130,6 +1137,8 @@ def Plugins(**kwargs):
 	]
 	if config.plugins.epgimport.showinextensions.value:
 		result.append(extDescriptor)
+	if config.plugins.epgimport.showinplugins.value:
+		result.append(pluginlist)
 	return result
 
 

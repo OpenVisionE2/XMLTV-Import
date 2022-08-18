@@ -5,6 +5,7 @@
 # the contract.
 #
 from __future__ import print_function
+from __future__ import absolute_import
 import time
 import os
 import gzip
@@ -19,18 +20,10 @@ from twisted.web.client import downloadPage
 import twisted.python.runtime
 
 import sys
-from six import PY2, PY3, ensure_binary
+from six import PY3, ensure_binary
+from six.moves.urllib.error import URLError, HTTPError
+from six.moves.http_client import HTTPException
 
-if PY2:
-    import urllib2
-    import httplib
-else:
-    import urllib.request
-    import urllib.parse
-    import urllib.error
-    # import http_client
-
-# import urllib2, httplib
 from datetime import datetime
 
 # Used to check server validity
@@ -157,13 +150,8 @@ class EPGImport:
     def checkValidServer(self, serverurl):
         dirname, filename = os.path.split(serverurl)
         FullString = dirname + '/' + CheckFile
-        # req = urllib2.build_opener()
-
-        if PY2:
-            req = urllib2.build_opener()
-        else:
-            req = urllib.request.build_opener()
-
+        from six.moves.urllib.request import build_opener
+        req = build_opener()
         req.addheaders = [('User-Agent', 'Twisted Client')]
         dlderror = 0
         if dirname in ServerStatusList:
@@ -171,40 +159,20 @@ class EPGImport:
             return ServerStatusList[dirname]
         else:
             # Server not in the list so checking it
-            if PY2:
-                try:
-                    response = req.open(FullString)
-                except urllib.error.HTTPError as e:
-                    print('[EPGImport] HTTPError in checkValidServer= ' + str(e.code))
-                    dlderror = 1
-                except urllib.error.URLError as e:
-                    print('[EPGImport] URLError in checkValidServer= ' + str(e.reason))
-                    dlderror = 1
-                except http.client.HTTPException as e:
-                    print('[EPGImport] HTTPException in checkValidServer')
-                    dlderror = 1
-                except Exception:
-                    print('[EPGImport] Generic exception in checkValidServer')
-                    dlderror = 1
-
-            else:
-
-                try:
-                    response = req.open(FullString)
-                except urllib.error.HTTPError as e:
-                    print('[EPGImport] HTTPError in checkValidServer= ' + str(e.code))
-                    dlderror = 1
-                except urllib.error.URLError as e:
-                    print('[EPGImport] URLError in checkValidServer= ' + str(e.reason))
-                    dlderror = 1
-
-                # except http_client.HTTPException as e:
-                # print ('[EPGImport] HTTPException in checkValidServer')
-                # dlderror = 1
-
-                except Exception:
-                    print('[EPGImport] Generic exception in checkValidServer')
-                    dlderror = 1
+            try:
+                response = req.open(FullString)
+            except HTTPError as e:
+                print('[EPGImport] HTTPError in checkValidServer= ' + str(e.code))
+                dlderror = 1
+            except URLError as e:
+                print('[EPGImport] URLError in checkValidServer= ' + str(e.reason))
+                dlderror = 1
+            except HTTPException as e:
+                print('[EPGImport] HTTPException in checkValidServer')
+                dlderror = 1
+            except Exception:
+                print('[EPGImport] Generic exception in checkValidServer')
+                dlderror = 1
 
         if not dlderror:
             LastTime = response.read().strip('\n')

@@ -3,13 +3,11 @@ from __future__ import print_function
 import os
 from . import log
 from xml.etree.cElementTree import iterparse
-try:
-	import cPickle as pickle
-except:
-	import pickle
+from six.moves import cPickle as pickle
 import gzip
 import time
 import random
+from six import ensure_str
 
 # User selection stored here, so it goes into a user settings backup
 SETTINGS_FILE = '/etc/enigma2/epgimport.conf'
@@ -79,7 +77,7 @@ class EPGChannel:
 					id = id.lower()
 					ref = elem.text
 					if id and ref:
-						ref = ref.encode('latin-1')
+						ref = ensure_str(ref)
 						if filterCallback(ref):
 							if id in self.items:
 								self.items[id].append(ref)
@@ -214,7 +212,7 @@ if __name__ == '__main__':
 		assert t in l
 		l.remove(t)
 	assert not l
-	for name, c in list(channelCache.items()):
+	for name, c in channelCache.items():
 		print("Update:", name)
 		c.update()
 		print("# of channels:", len(c.items))
