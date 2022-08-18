@@ -4,6 +4,7 @@ import time
 import calendar
 from . import log
 from xml.etree.cElementTree import iterparse
+from six import ensure_str
 
 # %Y%m%d%H%M%S
 
@@ -44,7 +45,7 @@ def get_xml_string(elem, name):
 	except Exception as e:
 		print("[XMLTVConverter] get_xml_string error:", e)
 	# Now returning UTF-8 by default, the epgdat/oudeis must be adjusted to make this work.
-	return six.ensure_str(r)
+	return ensure_str(r)
 
 
 def enumerateProgrammes(fp):
