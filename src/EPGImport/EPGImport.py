@@ -149,7 +149,7 @@ class EPGImport:
 
     def checkValidServer(self, serverurl):
         dirname, filename = os.path.split(serverurl)
-        FullString = dirname + '/' + CheckFile
+        FullString = dirname + b"/" + ensure_binary(CheckFile)
         from six.moves.urllib.request import build_opener
         req = build_opener()
         req.addheaders = [('User-Agent', 'Twisted Client')]
