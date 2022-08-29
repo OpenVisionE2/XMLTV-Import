@@ -39,9 +39,8 @@ def checkCrashLog():
 						print("no time found in filename")
 					if howold < 120:
 						print("recent crashfile found analysing")
-						crashfile = open(path + fname, "r")
-						crashtext = crashfile.read()
-						crashfile.close()
+						with open(path + fname, "r") as crashfile:
+							crashtext = crashfile.read()
 						if (crashtext.find("FATAL: LINE ") != -1):
 							print("string found, deleting epg.dat")
 							return True

@@ -32,9 +32,13 @@ from . import filtersServices
 
 def lastMACbyte():
 	try:
-		return int(open('/sys/class/net/eth0/address').readline().strip()[-2:], 16)
+		from uuid import getnode
+		return int(''.join('%02x' % ((getnode() >> 8 * i) & 0xff) for i in reversed(range(6)))[-2:], 16)
 	except:
-		return 256
+		try:
+			return int(open('/sys/class/net/eth0/address').readline().strip()[-2:], 16)
+		except:
+			return 256
 
 
 def calcDefaultStarttime():
@@ -105,6 +109,12 @@ from Plugins.Plugin import PluginDescriptor
 
 # historically located (not a problem, we want to update it)
 CONFIG_PATH = '/etc/epgimport'
+try:
+	os.makedirs(CONFIG_PATH)
+except OSError as e:  # race condition guard
+	import errno
+	if e.errno != errno.EEXIST:
+		print("Error creating: %s", CONFIG_PATH, file=log)
 
 # Global variable
 autoStartTimer = None
@@ -621,6 +631,8 @@ class EPGImportSources(Screen):
 			else:
 				if cfg["sources"] != "":
 					self.close(False, None, cfg)
+				else:
+					self.cancel()
 
 
 class EPGImportProfile(ConfigListScreen, Screen):
@@ -725,10 +737,9 @@ class EPGImportLog(Screen):
 
 	def save(self):
 		try:
-			f = open('/tmp/epgimport.log', 'w')
-			f.write(log.getvalue())
-			self.session.open(MessageBox, _("Write to /tmp/epgimport.log"), MessageBox.TYPE_INFO, timeout=5, close_on_any_key=True)
-			f.close()
+			with open('/tmp/epgimport.log', 'w') as f:
+				f.write(log.getvalue())
+				self.session.open(MessageBox, _("Write to /tmp/epgimport.log"), MessageBox.TYPE_INFO, timeout=5, close_on_any_key=True)
 		except Exception as e:
 			self["list"].setText("Failed to write /tmp/epgimport.log:str" + str(e))
 		self.close(True)
@@ -737,6 +748,8 @@ class EPGImportLog(Screen):
 		self.close(False)
 
 	def clear(self):
+		log.logfile.truncate(0)
+		log.logfile.seek(0)
 		self.close(False)
 
 
@@ -1007,7 +1020,7 @@ def WakeupDayOfWeek():
 	except:
 		cur_day = -1
 	if cur_day >= 0:
-		for i in (1, 2, 3, 4, 5, 6, 7):
+		for i in range(1, 8):
 			if config.plugins.extra_epgimport.day_import[(cur_day + i) % 7].value:
 				return i
 	return start_day
