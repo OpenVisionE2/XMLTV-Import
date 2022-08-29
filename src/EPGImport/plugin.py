@@ -112,6 +112,7 @@ CONFIG_PATH = '/etc/epgimport'
 try:
 	os.makedirs(CONFIG_PATH)
 except OSError as e:  # race condition guard
+	import errno
 	if e.errno != errno.EEXIST:
 		print("Error creating: %s", CONFIG_PATH, file=log)
 
