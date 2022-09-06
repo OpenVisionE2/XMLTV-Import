@@ -13,15 +13,14 @@ commit_files() {
   rm -rf *.pyc
   rm -rf *.pyo
   rm -rf *.mo
-  git checkout python3
+  git checkout master
   ./CI/chmod.sh
   ./CI/dos2unix.sh
   ./CI/PEP8.sh
   ./CI/futurize.sh
   ./CI/header.sh
-  ./CI/xml.sh
-  ./CI/chmod.sh
-  ./CI/dos2unix.sh
+  ./CI/skin.sh
+  ./CI/pyskin.sh
 }
 
 upload_files() {
