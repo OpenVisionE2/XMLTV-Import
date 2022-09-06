@@ -115,14 +115,14 @@ filtersServicesList = FiltersList()
 class filtersServicesSetup(Screen):
 	skin = """
 	<screen name="filtersServicesSetup" position="center,center" size="680,470" title="Ignore services list">
-		<ePixmap position="0,390" size="140,40" pixmap="skin_default/buttons/red.png" alphatest="on" />
-		<ePixmap position="170,390"  size="140,40" pixmap="skin_default/buttons/green.png"  alphatest="on" />
-		<ePixmap position="340,390" size="140,40" pixmap="skin_default/buttons/yellow.png" alphatest="on" />
-		<ePixmap position="510,390" size="140,40" pixmap="skin_default/buttons/blue.png" alphatest="on" />
-		<widget name="key_red" position="0,390" zPosition="1" size="140,40" font="Regular;17" halign="center" valign="center" backgroundColor="#9f1313" transparent="1" />
-		<widget name="key_green" position="170,390" zPosition="1" size="140,40" font="Regular;17" halign="center" valign="center" backgroundColor="#1f771f" transparent="1" />
-		<widget name="key_yellow" position="340,390" zPosition="1" size="140,40" font="Regular;17" halign="center" valign="center" backgroundColor="#a08500" transparent="1" />
-		<widget name="key_blue" position="510,390" zPosition="1" size="140,40" font="Regular;17" halign="center" valign="center" backgroundColor="#18188b" transparent="1" />
+		<ePixmap position="0,390" size="140,40" pixmap="skin_default/buttons/red.png" alphaTest="on" />
+		<ePixmap position="170,390"  size="140,40" pixmap="skin_default/buttons/green.png"  alphaTest="on" />
+		<ePixmap position="340,390" size="140,40" pixmap="skin_default/buttons/yellow.png" alphaTest="on" />
+		<ePixmap position="510,390" size="140,40" pixmap="skin_default/buttons/blue.png" alphaTest="on" />
+		<widget name="key_red" position="0,390" zPosition="1" size="140,40" font="Regular;17" horizontalAlignment="center" verticalAlignment="center" backgroundColor="#9f1313" transparent="1" />
+		<widget name="key_green" position="170,390" zPosition="1" size="140,40" font="Regular;17" horizontalAlignment="center" verticalAlignment="center" backgroundColor="#1f771f" transparent="1" />
+		<widget name="key_yellow" position="340,390" zPosition="1" size="140,40" font="Regular;17" horizontalAlignment="center" verticalAlignment="center" backgroundColor="#a08500" transparent="1" />
+		<widget name="key_blue" position="510,390" zPosition="1" size="140,40" font="Regular;17" horizontalAlignment="center" verticalAlignment="center" backgroundColor="#18188b" transparent="1" />
 		<widget source="list" render="Listbox" position="10,10" size="660,330" scrollbarMode="showOnDemand">
 			<convert type="TemplatedMultiContent">
 				{"template": [
@@ -135,7 +135,7 @@ class filtersServicesSetup(Screen):
 				}
 			</convert>
 		</widget>
-		<widget name="introduction" position="0,440" size="680,30" font="Regular;20" halign="center" valign="center" />
+		<widget name="introduction" position="0,440" size="680,30" font="Regular;20" horizontalAlignment="center" verticalAlignment="center" />
 	</screen>"""
 
 	def __init__(self, session):
@@ -235,14 +235,14 @@ class filtersServicesSetup(Screen):
 class filtersServicesSelection(ChannelSelectionBase):
 	skin = """
 	<screen position="center,center" size="560,430" title="Select service to add...">
-		<ePixmap pixmap="skin_default/buttons/red.png" position="0,0" size="140,40" alphatest="on" />
-		<ePixmap pixmap="skin_default/buttons/green.png" position="140,0" size="140,40" alphatest="on" />
-		<ePixmap pixmap="skin_default/buttons/yellow.png" position="280,0" size="140,40" alphatest="on" />
-		<ePixmap pixmap="skin_default/buttons/blue.png" position="420,0" size="140,40" alphatest="on" />
-		<widget name="key_red" position="0,0" zPosition="1" size="140,40" font="Regular;20" halign="center" valign="center" backgroundColor="#9f1313" transparent="1" />
-		<widget name="key_green" position="140,0" zPosition="1" size="140,40" font="Regular;20" halign="center" valign="center" backgroundColor="#1f771f" transparent="1" />
-		<widget name="key_yellow" position="280,0" zPosition="1" size="140,40" font="Regular;20" halign="center" valign="center" backgroundColor="#a08500" transparent="1" />
-		<widget name="key_blue" position="420,0" zPosition="1" size="140,40" font="Regular;20" halign="center" valign="center" backgroundColor="#18188b" transparent="1" />
+		<ePixmap pixmap="skin_default/buttons/red.png" position="0,0" size="140,40" alphaTest="on" />
+		<ePixmap pixmap="skin_default/buttons/green.png" position="140,0" size="140,40" alphaTest="on" />
+		<ePixmap pixmap="skin_default/buttons/yellow.png" position="280,0" size="140,40" alphaTest="on" />
+		<ePixmap pixmap="skin_default/buttons/blue.png" position="420,0" size="140,40" alphaTest="on" />
+		<widget name="key_red" position="0,0" zPosition="1" size="140,40" font="Regular;20" horizontalAlignment="center" verticalAlignment="center" backgroundColor="#9f1313" transparent="1" />
+		<widget name="key_green" position="140,0" zPosition="1" size="140,40" font="Regular;20" horizontalAlignment="center" verticalAlignment="center" backgroundColor="#1f771f" transparent="1" />
+		<widget name="key_yellow" position="280,0" zPosition="1" size="140,40" font="Regular;20" horizontalAlignment="center" verticalAlignment="center" backgroundColor="#a08500" transparent="1" />
+		<widget name="key_blue" position="420,0" zPosition="1" size="140,40" font="Regular;20" horizontalAlignment="center" verticalAlignment="center" backgroundColor="#18188b" transparent="1" />
 		<widget name="list" position="00,45" size="560,364" scrollbarMode="showOnDemand" />
 	</screen>
 	"""

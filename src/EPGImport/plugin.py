@@ -272,19 +272,19 @@ class EPGImportConfig(ConfigListScreen, Screen):
 	if HD:
 		skin = """
 			<screen position="center,center" size="600,500" title="EPG Import Configuration" >
-				<ePixmap name="red"    position="0,0"   zPosition="2" size="140,40" pixmap="skin_default/buttons/red.png" transparent="1" alphatest="on" />
-				<ePixmap name="green"  position="140,0" zPosition="2" size="140,40" pixmap="skin_default/buttons/green.png" transparent="1" alphatest="on" />
-				<ePixmap name="yellow" position="280,0" zPosition="2" size="140,40" pixmap="skin_default/buttons/yellow.png" transparent="1" alphatest="on" />
-				<ePixmap name="blue"   position="420,0" zPosition="2" size="140,40" pixmap="skin_default/buttons/blue.png" transparent="1" alphatest="on" />
-				<ePixmap position="562,0" size="35,25"  pixmap="skin_default/buttons/key_info.png" alphatest="on" />
-				<ePixmap position="562,30" size="35,25" pixmap="skin_default/buttons/key_menu.png" alphatest="on" />
-				<widget name="key_red" position="0,0" size="140,40" valign="center" halign="center" zPosition="4"  foregroundColor="white" font="Regular;19" transparent="1" shadowColor="background" shadowOffset="-2,-2" />
-				<widget name="key_green" position="140,0" size="140,40" valign="center" halign="center" zPosition="4"  foregroundColor="white" font="Regular;19" transparent="1" shadowColor="background" shadowOffset="-2,-2" />
-				<widget name="key_yellow" position="280,0" size="140,40" valign="center" halign="center" zPosition="4"  foregroundColor="white" font="Regular;19" transparent="1" shadowColor="background" shadowOffset="-2,-2" />
-				<widget name="key_blue" position="420,0" size="140,40" valign="center" halign="center" zPosition="4"  foregroundColor="white" font="Regular;19" transparent="1" shadowColor="background" shadowOffset="-2,-2" />
+				<ePixmap name="red"    position="0,0"   zPosition="2" size="140,40" pixmap="skin_default/buttons/red.png" transparent="1" alphaTest="on" />
+				<ePixmap name="green"  position="140,0" zPosition="2" size="140,40" pixmap="skin_default/buttons/green.png" transparent="1" alphaTest="on" />
+				<ePixmap name="yellow" position="280,0" zPosition="2" size="140,40" pixmap="skin_default/buttons/yellow.png" transparent="1" alphaTest="on" />
+				<ePixmap name="blue"   position="420,0" zPosition="2" size="140,40" pixmap="skin_default/buttons/blue.png" transparent="1" alphaTest="on" />
+				<ePixmap position="562,0" size="35,25"  pixmap="skin_default/buttons/key_info.png" alphaTest="on" />
+				<ePixmap position="562,30" size="35,25" pixmap="skin_default/buttons/key_menu.png" alphaTest="on" />
+				<widget name="key_red" position="0,0" size="140,40" verticalAlignment="center" horizontalAlignment="center" zPosition="4"  foregroundColor="white" font="Regular;19" transparent="1" shadowColor="background" shadowOffset="-2,-2" />
+				<widget name="key_green" position="140,0" size="140,40" verticalAlignment="center" horizontalAlignment="center" zPosition="4"  foregroundColor="white" font="Regular;19" transparent="1" shadowColor="background" shadowOffset="-2,-2" />
+				<widget name="key_yellow" position="280,0" size="140,40" verticalAlignment="center" horizontalAlignment="center" zPosition="4"  foregroundColor="white" font="Regular;19" transparent="1" shadowColor="background" shadowOffset="-2,-2" />
+				<widget name="key_blue" position="420,0" size="140,40" verticalAlignment="center" horizontalAlignment="center" zPosition="4"  foregroundColor="white" font="Regular;19" transparent="1" shadowColor="background" shadowOffset="-2,-2" />
 				<widget name="config" position="10,70" size="590,320" scrollbarMode="showOnDemand" />
-				<ePixmap alphatest="on" pixmap="skin_default/icons/clock.png" position="520,483" size="14,14" zPosition="3"/>
-				<widget font="Regular;18" halign="left" position="545,480" render="Label" size="55,20" source="global.CurrentTime" transparent="1" valign="center" zPosition="3">
+				<ePixmap alphaTest="on" pixmap="skin_default/icons/clock.png" position="520,483" size="14,14" zPosition="3"/>
+				<widget font="Regular;18" horizontalAlignment="left" position="545,480" render="Label" size="55,20" source="global.CurrentTime" transparent="1" verticalAlignment="center" zPosition="3">
 					<convert type="ClockToText">Default</convert>
 				</widget>
 				<widget name="statusbar" position="10,480" size="500,20" font="Regular;18" />
@@ -293,19 +293,19 @@ class EPGImportConfig(ConfigListScreen, Screen):
 	else:
 		skin = """
 			<screen position="center,center" size="600,430" title="EPG Import Configuration" >
-				<ePixmap name="red"    position="0,0"   zPosition="2" size="140,40" pixmap="skin_default/buttons/red.png" transparent="1" alphatest="on" />
-				<ePixmap name="green"  position="140,0" zPosition="2" size="140,40" pixmap="skin_default/buttons/green.png" transparent="1" alphatest="on" />
-				<ePixmap name="yellow" position="280,0" zPosition="2" size="140,40" pixmap="skin_default/buttons/yellow.png" transparent="1" alphatest="on" />
-				<ePixmap name="blue"   position="420,0" zPosition="2" size="140,40" pixmap="skin_default/buttons/blue.png" transparent="1" alphatest="on" />
-				<ePixmap position="562,0" size="35,25" pixmap="skin_default/buttons/key_info.png" alphatest="on" />
-				<ePixmap position="562,30" size="35,25" pixmap="skin_default/buttons/key_menu.png" alphatest="on" />
-				<widget name="key_red" position="0,0" size="140,40" valign="center" halign="center" zPosition="4"  foregroundColor="white" font="Regular;20" transparent="1" shadowColor="background" shadowOffset="-2,-2" />
-				<widget name="key_green" position="140,0" size="140,40" valign="center" halign="center" zPosition="4"  foregroundColor="white" font="Regular;20" transparent="1" shadowColor="background" shadowOffset="-2,-2" />
-				<widget name="key_yellow" position="280,0" size="140,40" valign="center" halign="center" zPosition="4"  foregroundColor="white" font="Regular;20" transparent="1" shadowColor="background" shadowOffset="-2,-2" />
-				<widget name="key_blue" position="420,0" size="140,40" valign="center" halign="center" zPosition="4"  foregroundColor="white" font="Regular;20" transparent="1" shadowColor="background" shadowOffset="-2,-2" />
+				<ePixmap name="red"    position="0,0"   zPosition="2" size="140,40" pixmap="skin_default/buttons/red.png" transparent="1" alphaTest="on" />
+				<ePixmap name="green"  position="140,0" zPosition="2" size="140,40" pixmap="skin_default/buttons/green.png" transparent="1" alphaTest="on" />
+				<ePixmap name="yellow" position="280,0" zPosition="2" size="140,40" pixmap="skin_default/buttons/yellow.png" transparent="1" alphaTest="on" />
+				<ePixmap name="blue"   position="420,0" zPosition="2" size="140,40" pixmap="skin_default/buttons/blue.png" transparent="1" alphaTest="on" />
+				<ePixmap position="562,0" size="35,25" pixmap="skin_default/buttons/key_info.png" alphaTest="on" />
+				<ePixmap position="562,30" size="35,25" pixmap="skin_default/buttons/key_menu.png" alphaTest="on" />
+				<widget name="key_red" position="0,0" size="140,40" verticalAlignment="center" horizontalAlignment="center" zPosition="4"  foregroundColor="white" font="Regular;20" transparent="1" shadowColor="background" shadowOffset="-2,-2" />
+				<widget name="key_green" position="140,0" size="140,40" verticalAlignment="center" horizontalAlignment="center" zPosition="4"  foregroundColor="white" font="Regular;20" transparent="1" shadowColor="background" shadowOffset="-2,-2" />
+				<widget name="key_yellow" position="280,0" size="140,40" verticalAlignment="center" horizontalAlignment="center" zPosition="4"  foregroundColor="white" font="Regular;20" transparent="1" shadowColor="background" shadowOffset="-2,-2" />
+				<widget name="key_blue" position="420,0" size="140,40" verticalAlignment="center" horizontalAlignment="center" zPosition="4"  foregroundColor="white" font="Regular;20" transparent="1" shadowColor="background" shadowOffset="-2,-2" />
 				<widget name="config" position="10,60" size="590,250" scrollbarMode="showOnDemand" />
-				<ePixmap alphatest="on" pixmap="skin_default/icons/clock.png" position="520,403" size="14,14" zPosition="3"/>
-				<widget font="Regular;18" halign="left" position="545,400" render="Label" size="55,20" source="global.CurrentTime" transparent="1" valign="center" zPosition="3">
+				<ePixmap alphaTest="on" pixmap="skin_default/icons/clock.png" position="520,403" size="14,14" zPosition="3"/>
+				<widget font="Regular;18" horizontalAlignment="left" position="545,400" render="Label" size="55,20" source="global.CurrentTime" transparent="1" verticalAlignment="center" zPosition="3">
 					<convert type="ClockToText">Default</convert>
 				</widget>
 				<widget name="statusbar" position="10,410" size="500,20" font="Regular;18" />
@@ -552,16 +552,16 @@ class EPGImportSources(Screen):
 	"Pick sources from config"
 	skin = """
 		<screen name="EPGImportSources" position="center,center" size="560,400" title="EPG Import Sources" >
-			<ePixmap name="red"    position="0,0"   zPosition="2" size="140,40" pixmap="skin_default/buttons/red.png" transparent="1" alphatest="on" />
-			<ePixmap name="green"  position="140,0" zPosition="2" size="140,40" pixmap="skin_default/buttons/green.png" transparent="1" alphatest="on" />
-			<ePixmap name="yellow" position="280,0" zPosition="2" size="140,40" pixmap="skin_default/buttons/yellow.png" transparent="1" alphatest="on" />
-			<ePixmap name="blue"   position="420,0" zPosition="2" size="140,40" pixmap="skin_default/buttons/blue.png" transparent="1" alphatest="on" />
-			<widget name="key_red" position="0,0" size="140,40" valign="center" halign="center" zPosition="4"  foregroundColor="white" font="Regular;17" transparent="1" shadowColor="background" shadowOffset="-2,-2" />
-			<widget name="key_green" position="140,0" size="140,40" valign="center" halign="center" zPosition="4"  foregroundColor="white" font="Regular;17" transparent="1" shadowColor="background" shadowOffset="-2,-2" />
-			<widget name="key_yellow" position="280,0" size="140,40" valign="center" halign="center" zPosition="4"  foregroundColor="white" font="Regular;17" transparent="1" shadowColor="background" shadowOffset="-2,-2" />
-			<widget name="key_blue" position="420,0" size="140,40" valign="center" halign="center" zPosition="4"  foregroundColor="white" font="Regular;17" transparent="1" shadowColor="background" shadowOffset="-2,-2" />
-			<ePixmap alphatest="on" pixmap="skin_default/icons/clock.png" position="480,383" size="14,14" zPosition="3"/>
-			<widget font="Regular;18" halign="left" position="505,380" render="Label" size="55,20" source="global.CurrentTime" transparent="1" valign="center" zPosition="3">
+			<ePixmap name="red"    position="0,0"   zPosition="2" size="140,40" pixmap="skin_default/buttons/red.png" transparent="1" alphaTest="on" />
+			<ePixmap name="green"  position="140,0" zPosition="2" size="140,40" pixmap="skin_default/buttons/green.png" transparent="1" alphaTest="on" />
+			<ePixmap name="yellow" position="280,0" zPosition="2" size="140,40" pixmap="skin_default/buttons/yellow.png" transparent="1" alphaTest="on" />
+			<ePixmap name="blue"   position="420,0" zPosition="2" size="140,40" pixmap="skin_default/buttons/blue.png" transparent="1" alphaTest="on" />
+			<widget name="key_red" position="0,0" size="140,40" verticalAlignment="center" horizontalAlignment="center" zPosition="4"  foregroundColor="white" font="Regular;17" transparent="1" shadowColor="background" shadowOffset="-2,-2" />
+			<widget name="key_green" position="140,0" size="140,40" verticalAlignment="center" horizontalAlignment="center" zPosition="4"  foregroundColor="white" font="Regular;17" transparent="1" shadowColor="background" shadowOffset="-2,-2" />
+			<widget name="key_yellow" position="280,0" size="140,40" verticalAlignment="center" horizontalAlignment="center" zPosition="4"  foregroundColor="white" font="Regular;17" transparent="1" shadowColor="background" shadowOffset="-2,-2" />
+			<widget name="key_blue" position="420,0" size="140,40" verticalAlignment="center" horizontalAlignment="center" zPosition="4"  foregroundColor="white" font="Regular;17" transparent="1" shadowColor="background" shadowOffset="-2,-2" />
+			<ePixmap alphaTest="on" pixmap="skin_default/icons/clock.png" position="480,383" size="14,14" zPosition="3"/>
+			<widget font="Regular;18" horizontalAlignment="left" position="505,380" render="Label" size="55,20" source="global.CurrentTime" transparent="1" verticalAlignment="center" zPosition="3">
 				<convert type="ClockToText">Default</convert>
 			</widget>
 			<widget name="list" position="10,40" size="540,336" scrollbarMode="showOnDemand" />
@@ -639,10 +639,10 @@ class EPGImportProfile(ConfigListScreen, Screen):
 	skin = """
 		<screen position="center,center" size="400,230" title="EPGImportProfile" >
 			<widget name="config" position="0,0" size="400,180" scrollbarMode="showOnDemand" />
-			<widget name="key_red" position="0,190" size="140,40" valign="center" halign="center" zPosition="4"  foregroundColor="white" font="Regular;18" transparent="1"/>
-			<widget name="key_green" position="140,190" size="140,40" valign="center" halign="center" zPosition="4"  foregroundColor="white" font="Regular;18" transparent="1"/>
-			<ePixmap name="red"    position="0,190"   zPosition="2" size="140,40" pixmap="skin_default/buttons/red.png" transparent="1" alphatest="on" />
-			<ePixmap name="green"  position="140,190" zPosition="2" size="140,40" pixmap="skin_default/buttons/green.png" transparent="1" alphatest="on" />
+			<widget name="key_red" position="0,190" size="140,40" verticalAlignment="center" horizontalAlignment="center" zPosition="4"  foregroundColor="white" font="Regular;18" transparent="1"/>
+			<widget name="key_green" position="140,190" size="140,40" verticalAlignment="center" horizontalAlignment="center" zPosition="4"  foregroundColor="white" font="Regular;18" transparent="1"/>
+			<ePixmap name="red"    position="0,190"   zPosition="2" size="140,40" pixmap="skin_default/buttons/red.png" transparent="1" alphaTest="on" />
+			<ePixmap name="green"  position="140,190" zPosition="2" size="140,40" pixmap="skin_default/buttons/green.png" transparent="1" alphaTest="on" />
 		</screen>"""
 
 	def __init__(self, session, args=0):
@@ -690,16 +690,16 @@ class EPGImportProfile(ConfigListScreen, Screen):
 class EPGImportLog(Screen):
 	skin = """
 		<screen position="center,center" size="560,400" title="EPG Import Log" >
-			<ePixmap name="red"    position="0,0"   zPosition="2" size="140,40" pixmap="skin_default/buttons/red.png" transparent="1" alphatest="on" />
-			<ePixmap name="green"  position="140,0" zPosition="2" size="140,40" pixmap="skin_default/buttons/green.png" transparent="1" alphatest="on" />
-			<ePixmap name="yellow" position="280,0" zPosition="2" size="140,40" pixmap="skin_default/buttons/yellow.png" transparent="1" alphatest="on" />
-			<ePixmap name="blue"   position="420,0" zPosition="2" size="140,40" pixmap="skin_default/buttons/blue.png" transparent="1" alphatest="on" />
-			<widget name="key_red" position="0,0" size="140,40" valign="center" halign="center" zPosition="4"  foregroundColor="white" font="Regular;20" transparent="1" shadowColor="background" shadowOffset="-2,-2" />
-			<widget name="key_green" position="140,0" size="140,40" valign="center" halign="center" zPosition="4"  foregroundColor="white" font="Regular;20" transparent="1" shadowColor="background" shadowOffset="-2,-2" />
-			<widget name="key_yellow" position="280,0" size="140,40" valign="center" halign="center" zPosition="4"  foregroundColor="white" font="Regular;20" transparent="1" shadowColor="background" shadowOffset="-2,-2" />
-			<widget name="key_blue" position="420,0" size="140,40" valign="center" halign="center" zPosition="4"  foregroundColor="white" font="Regular;20" transparent="1" shadowColor="background" shadowOffset="-2,-2" />
-			<ePixmap alphatest="on" pixmap="skin_default/icons/clock.png" position="480,383" size="14,14" zPosition="3"/>
-			<widget font="Regular;18" halign="left" position="505,380" render="Label" size="55,20" source="global.CurrentTime" transparent="1" valign="center" zPosition="3">
+			<ePixmap name="red"    position="0,0"   zPosition="2" size="140,40" pixmap="skin_default/buttons/red.png" transparent="1" alphaTest="on" />
+			<ePixmap name="green"  position="140,0" zPosition="2" size="140,40" pixmap="skin_default/buttons/green.png" transparent="1" alphaTest="on" />
+			<ePixmap name="yellow" position="280,0" zPosition="2" size="140,40" pixmap="skin_default/buttons/yellow.png" transparent="1" alphaTest="on" />
+			<ePixmap name="blue"   position="420,0" zPosition="2" size="140,40" pixmap="skin_default/buttons/blue.png" transparent="1" alphaTest="on" />
+			<widget name="key_red" position="0,0" size="140,40" verticalAlignment="center" horizontalAlignment="center" zPosition="4"  foregroundColor="white" font="Regular;20" transparent="1" shadowColor="background" shadowOffset="-2,-2" />
+			<widget name="key_green" position="140,0" size="140,40" verticalAlignment="center" horizontalAlignment="center" zPosition="4"  foregroundColor="white" font="Regular;20" transparent="1" shadowColor="background" shadowOffset="-2,-2" />
+			<widget name="key_yellow" position="280,0" size="140,40" verticalAlignment="center" horizontalAlignment="center" zPosition="4"  foregroundColor="white" font="Regular;20" transparent="1" shadowColor="background" shadowOffset="-2,-2" />
+			<widget name="key_blue" position="420,0" size="140,40" verticalAlignment="center" horizontalAlignment="center" zPosition="4"  foregroundColor="white" font="Regular;20" transparent="1" shadowColor="background" shadowOffset="-2,-2" />
+			<ePixmap alphaTest="on" pixmap="skin_default/icons/clock.png" position="480,383" size="14,14" zPosition="3"/>
+			<widget font="Regular;18" horizontalAlignment="left" position="505,380" render="Label" size="55,20" source="global.CurrentTime" transparent="1" verticalAlignment="center" zPosition="3">
 				<convert type="ClockToText">Default</convert>
 			</widget>
 			<widget name="list" position="10,40" size="540,340" />
