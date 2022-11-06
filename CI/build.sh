@@ -19,13 +19,16 @@ commit_files() {
   ./CI/PEP8.sh
   ./CI/futurize.sh
   ./CI/header.sh
+  ./CI/xml.sh
+  ./CI/chmod.sh
+  ./CI/dos2unix.sh
   ./CI/skin.sh
   ./CI/pyskin.sh
 }
 
 upload_files() {
   git remote add upstream https://${GITHUB_TOKEN}@github.com/OpenVisionE2/XMLTV-Import.git > /dev/null 2>&1
-  git push --quiet upstream python3 || echo "failed to push with error $?"
+  git push --quiet upstream master || echo "failed to push with error $?"
 }
 
 setup_git
